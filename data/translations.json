@@ -1,0 +1,80 @@
+{
+    "start": {
+        "ru": "Привет! Я бот 😄",
+        "en": "Hello! I am a bot 😄"
+    },
+    "choose_language": {
+        "ru": "Выбери язык 👇",
+        "en": "Choose language 👇"
+    },
+    "language_set": {
+        "ru": "Язык установлен: Русский 🇷🇺",
+        "en": "Language set: English 🇬🇧"
+    },
+    "not_logged": {
+        "ru": "Ты не залогинен ❌",
+        "en": "You are not logged in ❌"
+    },
+    "welcome_text": {
+        "ru": "🚀 <b>Добро пожаловать!</b>\n\nЭтот бот основан на <b>проверенной торговой стратегии</b>, построенной на анализе <b>больших объёмов данных</b> 📊\n\n📈 <b>Без угадывания</b> — только статистика\n⚙️ <b>Чёткая система</b> исполнения\n💡 <b>Каждое решение обосновано</b>\n\n💰 <b>Подключайся и зарабатывай вместе с нами!</b>\nИспользуй преимущество, которое даёт математика.",
+        
+        "en": "🚀 <b>Welcome!</b>\n\nThis bot is built on a <b>proven trading strategy</b>, developed through <b>extensive data analysis</b> 📊\n\n📈 <b>No guessing</b> — only statistics\n⚙️ <b>System-driven execution</b>\n💡 <b>Every decision is grounded</b>\n\n💰 <b>Join now and start earning!</b>\nLeverage the power of data and mathematics."
+    },
+    "continue_button": {
+        "ru": "Продолжить ➡️",
+        "en": "Continue ➡️"
+    },
+    "onboarding_completed": {
+        "ru": "Онбординг завершён! 🎉",
+        "en": "Onboarding completed! 🎉"
+    },
+    "dashboard_text": {
+    "ru": "💰 <b>Баланс: 20.5$</b>\n\n📊 <b>Система:</b> Активна\n📈 <b>Сегодня:</b> +3.2%\n\n━━━━━━━━━━━━━━━\n\n⚡ Бот автоматически анализирует рынок и работает по проверенной стратегии на основе статистики.\n\n💡 Просто держи систему активной — остальное уже рассчитано.",
+    
+    "en": "💰 <b>Balance: $20.5</b>\n\n📊 <b>System:</b> Active\n📈 <b>Today:</b> +3.2%\n\n━━━━━━━━━━━━━━━\n\n⚡ The bot automatically analyzes the market and executes trades based on a proven statistical strategy.\n\n💡 Keep the system running — everything else is already calculated."
+    },
+    "dashboard_buttons": {
+    "ru": ["💳 Пополнить", "💸 Вывести"],
+    "en": ["💳 Deposit", "💸 Withdraw"]
+    },
+    "top_up_text": {
+        "ru": "💳 <b>Пополнение баланса</b>\n\nВыберите удобный способ пополнения и укажите сумму.\n\n⚡ Средства зачисляются автоматически\n🔒 Безопасные и проверенные методы\n\n💰 <b>Начни увеличивать доход уже сейчас!</b>",
+            
+        "en": "💳 <b>Balance Top-Up</b>\n\nChoose your preferred payment method and enter the amount.\n\n⚡ Funds are credited automatically\n🔒 Safe and verified methods\n\n💰 <b>Start growing your profit now!</b>"
+    },
+    "withdraw_text": {
+        "ru": "💸 <b>Вывод средств</b>\n\nУкажите сумму для вывода и выберите способ получения.\n\n⏱ Обработка заявок в кратчайшие сроки\n🔐 Надёжные транзакции\n\n💼 <b>Ваши средства — под вашим контролем</b>",
+        
+        "en": "💸 <b>Withdraw Funds</b>\n\nEnter the withdrawal amount and select a method.\n\n⏱ Fast request processing\n🔐 Secure transactions\n\n💼 <b>Your funds — fully under your control</b>"
+    },
+    "balance_button": {
+        "ru": "💼 Мой баланс",
+        "en": "💼 My Balance"
+    },
+    "about_button": {
+        "ru": ["🌐 Сменить язык", "ℹ️ О проекте"],
+        "en": ["🌐 Change Language", "ℹ️ About Project"]
+    },
+    "assets_overview": {
+    "ru": "<b>Обзор активов</b>",
+    "en": "<b>Assets Overview</b>"
+    },
+    "total_balance": {
+        "ru": "<b>Общий баланс</b>",
+        "en": "<b>Total Balance</b>"
+    },
+
+    "today_pnl": {
+        "ru": "<b>Прибыль за сегодня:</b> +0.00 (+0.00%)",
+        "en": "<b>Today's P&L:</b> +0.00 (+0.00%)"
+    },
+
+    "account_balance": {
+        "ru": "<b>Баланс аккаунта</b>",
+        "en": "<b>Account Balance</b>"
+    },
+    "update_info": {
+        "ru": "🔄 <i>Данные обновляются каждые 24 часа.</i>",
+        "en": "🔄 <i>Data updates every 24 hours.</i>"
+    }
+}
