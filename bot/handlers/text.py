@@ -58,7 +58,8 @@ async def handle_text(update, context):
     if text == "🇷🇺 Русский":
         was_logged_in = is_user_logged_in(user.id)  # ← сохраняем ДО логина
 
-        login_user(user.id, user.username, "ru")  # ← обновляем пользователя
+        if not was_logged_in:
+            login_user(user.id, user.username, "ru")  # ← обновляем пользователя
 
         await update.message.reply_text(
             t("language_set", user.id),
@@ -73,8 +74,8 @@ async def handle_text(update, context):
 
     elif text == "🇬🇧 English":
         was_logged_in = is_user_logged_in(user.id)  # ← сохраняем ДО логина
-
-        login_user(user.id, user.username, "en")
+        if not was_logged_in:
+            login_user(user.id, user.username, "en")
 
         await update.message.reply_text(
             t("language_set", user.id),
