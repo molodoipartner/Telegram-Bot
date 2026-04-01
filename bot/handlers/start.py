@@ -12,7 +12,7 @@ async def send_welcome(update, user_id):
 
     # отправляем картинку + текст
     await update.message.reply_photo(
-        photo="https://ibb.co/S4mzdzVv",  # можешь заменить на свою
+        photo=open("images/Prew.jpg", "rb"),
         caption=t("welcome_text", user_id),
         parse_mode="HTML",  # ВОТ ЭТО КЛЮЧ 🔥
         reply_markup=reply_markup

@@ -1,5 +1,5 @@
 from bot.services.user_service import login_user
-from bot.utils.i18n import t
+from bot.utils.i18n import t, get_image
 from telegram import ReplyKeyboardRemove, ReplyKeyboardMarkup
 import json
 from PIL import Image, ImageDraw, ImageFont
@@ -17,6 +17,8 @@ def is_user_logged_in(user_id):
         return False
 
     return user.get("logged_in", False)
+
+
 
 async def handle_text(update, context):
     user = update.effective_user
@@ -62,29 +64,69 @@ async def handle_text(update, context):
             await send_dashboard(update, user.id)
         else:
             await send_welcome(update, user.id)
-    
-    elif text in ["Продолжить ➡️", "Continue ➡️", "💼 Мой баланс", "💼 My Balance"]:
+
+
+    elif text in ["Продолжить ➡️", "Continue ➡️", "💼 Мой баланс", "💼 My Balance", "Начать зарабатывать! ➡️", "Start Earning! ➡️"]:
         await send_dashboard(update, user.id)
 
     elif text in ["💳 Deposit", "💳 Пополнить"]:
         keyboard = [
             [t("balance_button", user.id)]
         ]
-        await update.message.reply_text(
-            t("top_up_text", user.id),
+        await update.message.reply_photo(
+            photo=open("images/Deposit.jpg", "rb"),
+            caption=t("top_up_text", user.id),
             parse_mode="HTML",
             reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
         )
-        
+
     elif text in ["💸 Вывести", "💸 Withdraw"]:
         keyboard = [
             [t("balance_button", user.id)]
         ]
-        await update.message.reply_text(
-            t("withdraw_text", user.id),
+        await update.message.reply_photo(
+            photo=open("images/Withdraw.jpg", "rb"),
+            caption=t("withdraw_text", user.id),
             parse_mode="HTML",
             reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
         )
+
+    elif text in ["ℹ️ О проекте", "ℹ️ About Project"]:
+        keyboard = [
+            [t("continue_button2", user.id)]
+        ]
+        await update.message.reply_photo(
+            photo=open("images/Proof.jpg", "rb"),
+            caption=t("slide_1_text", user.id),
+            parse_mode="HTML",
+            reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
+        )
+
+    elif text in ["Далее ➡️", "Next ➡️"]:
+        keyboard = [
+            [t("continue_button3", user.id)]
+        ]
+        await update.message.reply_photo(
+            photo=open("images/Balance.jpg", "rb"),
+            caption=t("slide_2_text", user.id),
+            parse_mode="HTML",
+            reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
+        )
+        
+    elif text in ["Вау! ➡️", "Wow! ➡️"]:
+        keyboard = [
+            [t("continue_button4", user.id)]
+        ]
+
+        image_path = get_image("balance", user.id)
+
+        with open(image_path, "rb") as photo:
+            await update.message.reply_photo(
+                photo=photo,
+                caption=t("slide_3_text", user.id),
+                parse_mode="HTML",
+                reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
+            )
 
     elif text in ["🌐 Сменить язык", "🌐 Change Language"]:
         keyboard = [
@@ -109,7 +151,7 @@ async def send_welcome(update, user_id):
 
     # отправляем картинку + текст
     await update.message.reply_photo(
-        photo=open("Prew.jpg", "rb"),
+        photo=open("images/Prew.jpg", "rb"),
         caption=t("welcome_text", user_id),
         parse_mode="HTML",  # ВОТ ЭТО КЛЮЧ 🔥
         reply_markup=reply_markup

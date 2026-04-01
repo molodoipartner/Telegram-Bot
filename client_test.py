@@ -4,12 +4,12 @@ import json
 
 def fetch_users():
     url = "https://telegram-bot-41j5.onrender.com/users"
-    params = {
-        "api_key": "SECRET123"  # 🔑 тот же ключ
+    headers = {
+        "X-API-KEY": "SECRET123"  # 🔑 тот же ключ
     }
 
     try:
-        response = requests.get(url, params=params)
+        response = requests.get(url, headers=headers)
 
         if response.status_code == 200:
             print("✅ Доступ разрешён")

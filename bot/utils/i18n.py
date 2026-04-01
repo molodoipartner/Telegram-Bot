@@ -18,3 +18,23 @@ def t(key, user_id):
         lang = user["language"]
 
     return translations.get(key, {}).get(lang, key)
+
+def get_user_language(user_id):
+    user = get_user(user_id)
+
+    if user and "language" in user:
+        return user["language"]
+
+    return "en"
+
+def get_image(name, user_id):
+    lang = get_user_language(user_id)
+
+    images = {
+        "balance": {
+            "ru": "images/Human_hand_Ru.jpg",
+            "en": "images/Human_hand_En.jpg"
+        }
+    }
+
+    return images.get(name, {}).get(lang)

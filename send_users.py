@@ -3,7 +3,7 @@ import json
 import os
 
 def send_users():
-    url = "http://localhost:8000/users"
+    url = "https://telegram-bot-41j5.onrender.com/users"
 
     headers = {
         "X-API-KEY": "SECRET123"

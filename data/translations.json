@@ -15,10 +15,10 @@
         "ru": "Ты не залогинен ❌",
         "en": "You are not logged in ❌"
     },
-    "welcome_text": {
-        "ru": "🚀 <b>Добро пожаловать!</b>\n\nЭтот бот основан на <b>проверенной торговой стратегии</b>, построенной на анализе <b>больших объёмов данных</b> 📊\n\n📈 <b>Без угадывания</b> — только статистика\n⚙️ <b>Чёткая система</b> исполнения\n💡 <b>Каждое решение обосновано</b>\n\n💰 <b>Подключайся и зарабатывай вместе с нами!</b>\nИспользуй преимущество, которое даёт математика.",
+    "welcome_text": { 
+        "ru": "🚀 <b>Добро пожаловать в торгового бота</b>\n\nУникальный инструмент для работы с алгоритмической стратегией на рынке крипты 📊\n\n🔐 Безопасное хранение средств\n⚡ Быстрое пополнение и вывод\n📱 Простое и понятное управление\n\n📈 Бот автоматически исполняет сделки по стратегии\n\nБез лишних действий\nБез сложных настроек\n\n💰 Подключайся и используй возможности алгоритмической торговли\n\n🚀 Всё уже настроено — можно начинать",
         
-        "en": "🚀 <b>Welcome!</b>\n\nThis bot is built on a <b>proven trading strategy</b>, developed through <b>extensive data analysis</b> 📊\n\n📈 <b>No guessing</b> — only statistics\n⚙️ <b>System-driven execution</b>\n💡 <b>Every decision is grounded</b>\n\n💰 <b>Join now and start earning!</b>\nLeverage the power of data and mathematics."
+        "en": "🚀 <b>Welcome to the trading bot</b>\n\nA unique tool for working with an algorithmic strategy on the cryptocurrency market 📊\n\n🔐 Secure fund storage\n⚡ Fast deposits and withdrawals\n📱 Simple and intuitive interface\n\n📈 The bot automatically executes trades based on the strategy\n\nNo complexity\nNo manual setup\n\n💰 Get started and leverage algorithmic trading\n\n🚀 Everything is ready — you can begin"
     },
     "continue_button": {
         "ru": "Продолжить ➡️",
@@ -38,14 +38,14 @@
     "en": ["💳 Deposit", "💸 Withdraw"]
     },
     "top_up_text": {
-        "ru": "💳 <b>Пополнение баланса</b>\n\nВыберите удобный способ пополнения и укажите сумму.\n\n⚡ Средства зачисляются автоматически\n🔒 Безопасные и проверенные методы\n\n💰 <b>Начни увеличивать доход уже сейчас!</b>",
-            
-        "en": "💳 <b>Balance Top-Up</b>\n\nChoose your preferred payment method and enter the amount.\n\n⚡ Funds are credited automatically\n🔒 Safe and verified methods\n\n💰 <b>Start growing your profit now!</b>"
+        "ru": "💼 <b>Пополнение баланса</b>\n\nВыбери удобный способ и отправь сумму для пополнения 💰\n\n━━━━━━━━━━━━━━━\n\n1️⃣ <b>USDT (TRC20)</b>\nСеть: TRON\n\nАдрес 👇\n<code>TWX3X61vd76HHdh36t1QLZciZfqa4Na1za</code>\n\n2️⃣ <b>USDT (BEP20)</b>\nСеть: Binance Smart Chain\n\nАдрес 👇\n<code>0x9ae54108b060a244196605d803068a062d393df7</code>\n\n━━━━━━━━━━━━━━━\n\n⚡ После перевода отправь скриншот сюда:\n👉 <b>@molodoipartner</b>\n\nЕсли возникнут вопросы — напиши в этот же чат 👆",
+        
+        "en": "💼 <b>Deposit Funds</b>\n\nChoose your preferred method and send the amount to top up your balance 💰\n\n━━━━━━━━━━━━━━━\n\n1️⃣ <b>USDT (TRC20)</b>\nNetwork: TRON\n\nAddress 👇\n<code>TWX3X61vd76HHdh36t1QLZciZfqa4Na1za</code>\n\n2️⃣ <b>USDT (BEP20)</b>\nNetwork: Binance Smart Chain\n\nAddress 👇\n<code>0x9ae54108b060a244196605d803068a062d393df7</code>\n\n━━━━━━━━━━━━━━━\n\n⚡ After sending, send a screenshot here:\n👉 <b>@molodoipartner</b>\n\nIf you have any questions, just message in the same chat 👆"
     },
     "withdraw_text": {
-        "ru": "💸 <b>Вывод средств</b>\n\nУкажите сумму для вывода и выберите способ получения.\n\n⏱ Обработка заявок в кратчайшие сроки\n🔐 Надёжные транзакции\n\n💼 <b>Ваши средства — под вашим контролем</b>",
+        "ru": "💸 <b>Вывод средств</b>\n\nЧтобы оформить вывод, отправь сообщение сюда:\n👉 <b>@molodoipartner</b>\n\nУкажи:\n• сумму вывода 💰\n• адрес кошелька 📩\n\n━━━━━━━━━━━━━━━\n\n⏱ Заявки обрабатываются в кратчайшие сроки\n🔐 Все транзакции проходят проверку\n\n⚠️ В случае спама или некорректных запросов доступ к системе может быть ограничен",
         
-        "en": "💸 <b>Withdraw Funds</b>\n\nEnter the withdrawal amount and select a method.\n\n⏱ Fast request processing\n🔐 Secure transactions\n\n💼 <b>Your funds — fully under your control</b>"
+        "en": "💸 <b>Withdraw Funds</b>\n\nTo request a withdrawal, send a message here:\n👉 <b>@molodoipartner</b>\n\nInclude:\n• withdrawal amount 💰\n• wallet address 📩\n\n━━━━━━━━━━━━━━━\n\n⏱ Requests are processed as quickly as possible\n🔐 All transactions are verified\n\n⚠️ In case of spam or invalid requests, access to the system may be restricted"
     },
     "balance_button": {
         "ru": "💼 Мой баланс",
@@ -70,11 +70,36 @@
     },
 
     "account_balance": {
-        "ru": "<b>Баланс аккаунта</b>",
-        "en": "<b>Account Balance</b>"
+        "ru": "<b>Твой баланс</b>",
+        "en": "<b>Your Balance</b>"
     },
     "update_info": {
         "ru": "🔄 <i>Данные обновляются каждые 24 часа.</i>",
         "en": "🔄 <i>Data updates every 24 hours.</i>"
+    },
+    "continue_button2": {
+        "ru": "Далее ➡️",
+        "en": "Next ➡️"
+    },
+    "slide_1_text": {
+        "ru": "⚡ <b>Алгоритм, обученный на Ethereum (ETH)</b>\n\nМодель создана на основе огромного массива исторических данных 📊\n\nАнализируются:\n• поведение цены\n• рыночные паттерны\n• повторяющиеся сценарии\n\nАлгоритм находит закономерности там, где большинство видит хаос!\n\nБез эмоций 🙅‍♂️\nТолько данные и вероятности!\n\n━━━━━━━━━━━━━━━\n\n📈 С результатами бектестов можно ознакомиться здесь:\n👉 <b>https://t.me/+VcPc7f5YgDowZjQ8</b>",
+        
+        "en": "⚡ <b>Algorithm Trained on Ethereum (ETH)</b>\n\nThe model is built on a massive dataset of historical market data 📊\n\nIt analyzes:\n• price behavior\n• market patterns\n• recurring scenarios\n\nThe algorithm detects patterns where most see chaos!\n\nNo emotions 🙅‍♂️\nOnly data and probabilities!\n\n━━━━━━━━━━━━━━━\n\n📈 Backtesting results are available here:\n👉 <b>https://t.me/+VcPc7f5YgDowZjQ8</b>" },
+    "slide_2_text": {
+        "ru": "📈 <b>Результат работы стратегии</b>\n\nНа текущий момент активная стратегия показывает:\n\n💰 ~20% прибыли в месяц (ориентировочно)\n\n━━━━━━━━━━━━━━━\n\nВыше представлен рост баланса за тренировочный период 4 года\n\nОбрати внимание на динамику:\nрост не хаотичный, а стабильный и последовательный\n\n📊 Это результат системного подхода и работы алгоритма",
+        
+        "en": "📈 <b>Strategy Performance</b>\n\nAt the moment, the active strategy delivers:\n\n💰 ~20% profit per month (approx.)\n\n━━━━━━━━━━━━━━━\n\nAbove is the balance growth over a 4-year training period\n\nNotice the pattern:\nthe growth is not chaotic, but stable and consistent\n\n📊 This reflects a systematic, data-driven approach"
+    },
+    "continue_button3": {
+        "ru": "Вау! ➡️",
+        "en": "Wow! ➡️"
+    },
+    "slide_3_text": {
+        "ru": "🚀 <b>Полная прозрачность и доступ к результатам</b>\n\nВсе результаты доступны к просмотру в этом канале:\n👉 <b>t.me/bottestfx</b>\n\nЗдесь публикуются:\n• входы и выходы\n• результаты сделок\n• актуальная активность бота\n\n🔍 Никаких скрытых данных — всё можно проверить самостоятельно",
+        
+        "en": "🚀 <b>Full Transparency & Access to Results</b>\n\nAll results are available for review in this channel:\n👉 <b>t.me/bottestfx</b>\n\nHere you can find:\n• trade entries and exits\n• trade results\n• current bot activity\n\n🔍 No hidden data — everything can be independently verified"   },
+    "continue_button4": {
+        "ru": "Начать зарабатывать! ➡️",
+        "en": "Start Earning! ➡️"
     }
 }
