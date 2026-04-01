@@ -1,4 +1,5 @@
 from bot.services.user_service import login_user
+from bot.utils.file_db import load_users, save_users
 from bot.utils.i18n import t, get_image
 from telegram import ReplyKeyboardRemove, ReplyKeyboardMarkup
 import json
@@ -7,6 +8,20 @@ import io
 from bot.handlers.start import start
 from bot.services.user_service import get_user
 import os
+
+def set_user_language(user_id, language):
+    data = load_users()
+
+    user_id = str(user_id)
+
+    if user_id not in data:
+        return False  # пользователь не найден
+
+    data[user_id]["language"] = language
+
+    save_users(data)
+    return True
+
 
 def is_user_logged_in(user_id):
     with open("data/users.json", "r", encoding="utf-8") as f:
@@ -60,6 +75,8 @@ async def handle_text(update, context):
 
         if not was_logged_in:
             login_user(user.id, user.username, "ru")  # ← обновляем пользователя
+        else:
+            set_user_language(user.id, "ru")  # ← ВАЖНО
 
         await update.message.reply_text(
             t("language_set", user.id),
@@ -76,6 +93,8 @@ async def handle_text(update, context):
         was_logged_in = is_user_logged_in(user.id)  # ← сохраняем ДО логина
         if not was_logged_in:
             login_user(user.id, user.username, "en")
+        else:
+            set_user_language(user.id, "en")  # ← ВАЖНО
 
         await update.message.reply_text(
             t("language_set", user.id),
