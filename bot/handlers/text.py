@@ -6,6 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 import io
 from bot.handlers.start import start
 from bot.services.user_service import get_user
+import os
 
 def is_user_logged_in(user_id):
     with open("data/users.json", "r", encoding="utf-8") as f:
@@ -140,38 +141,52 @@ def get_user_data(user_id):
     })
 
 
+
+
 def generate_balance_image(balance, pnl, user_id):
     width, height = 900, 450
     img = Image.new("RGB", (width, height), color=(3, 12, 30))
     draw = ImageDraw.Draw(img)
 
-    # Шрифты
+    # 📁 Абсолютный путь к папке fonts
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    font_path_regular = os.path.abspath("fonts/ttf/DejaVuSans.ttf")
+    font_path_bold = os.path.abspath("fonts/ttf/DejaVuSans-Bold.ttf")
+
+    # 🔤 Шрифты
     try:
-        font_title = ImageFont.truetype("arial.ttf", 36)
-        font_big = ImageFont.truetype("arial.ttf", 70)
-        font_small = ImageFont.truetype("arial.ttf", 28)
-    except:
+        font_title = ImageFont.truetype(font_path_regular, 36)
+        font_big = ImageFont.truetype(font_path_bold, 70)
+        font_small = ImageFont.truetype(font_path_regular, 28)
+    except Exception as e:
+        print("Ошибка загрузки шрифта:", e)
         font_title = ImageFont.load_default()
         font_big = ImageFont.load_default()
         font_small = ImageFont.load_default()
 
-    # 📊 Заголовок (локализация)
+    # 📊 Заголовок
     title_text = t("assets_overview", user_id)
-    draw.text((60, 50), title_text.replace("<b>", "").replace("</b>", ""), fill=(160, 180, 210), font=font_title)
+    draw.text(
+        (60, 50),
+        title_text.replace("<b>", "").replace("</b>", ""),
+        fill=(160, 180, 210),
+        font=font_title
+    )
 
     # 💰 Баланс
-    draw.text((60, 130), f"{balance:,.2f} USD$", fill=(255, 255, 255), font=font_big)
+    draw.text(
+        (60, 130),
+        f"{balance:,.2f} USD$",
+        fill=(255, 255, 255),
+        font=font_big
+    )
 
     # 📈 P&L
     pnl_color = (0, 200, 120) if pnl >= 0 else (255, 80, 80)
     pnl_sign = "+" if pnl >= 0 else ""
 
     initial_balance = balance - pnl
-
-    if initial_balance != 0:
-        percent = pnl / initial_balance * 100
-    else:
-        percent = 0
+    percent = (pnl / initial_balance * 100) if initial_balance != 0 else 0
 
     pnl_text_template = t("today_pnl", user_id)
     pnl_text_template = pnl_text_template.replace("<b>", "").replace("</b>", "")
@@ -192,15 +207,19 @@ def generate_balance_image(balance, pnl, user_id):
     acc_text = t("account_balance", user_id)
     acc_text = acc_text.replace("<b>", "").replace("</b>", "")
 
-    draw.text((60, 350), acc_text, fill=(120, 140, 180), font=font_small)
+    draw.text(
+        (60, 350),
+        acc_text,
+        fill=(120, 140, 180),
+        font=font_small
+    )
 
-    # Сохранение
+    # 💾 Сохранение
     img_bytes = io.BytesIO()
     img.save(img_bytes, format="PNG")
     img_bytes.seek(0)
 
     return img_bytes
-
 async def send_dashboard(update, user_id):
     user = get_user_data(user_id)
 
