@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from bot.utils.file_db import load_users, save_users
 
 def save_user(user_id, username):
@@ -31,6 +33,8 @@ def login_user(user_id, username, language):
     data[str(user_id)] = {
         "username": username,
         "logged_in": True,
+        "logged_in_fully": False,
+        "logged_in_at": datetime.now().isoformat(),
         "language": language,
         "balance": 0.00,
         "P&L": 0.00

@@ -18,7 +18,28 @@ def is_user_logged_in(user_id):
 
     return user.get("logged_in", False)
 
+def is_user_logged_in_fully(user_id):
+    with open("data/users.json", "r", encoding="utf-8") as f:
+        users = json.load(f)
 
+    user = users.get(str(user_id))
+    if not user:
+        return False
+
+    return user.get("logged_in_fully", False)
+
+def set_user_logged_in_fully(user_id):
+    with open("data/users.json", "r", encoding="utf-8") as f:
+        users = json.load(f)
+
+    user = users.get(str(user_id))
+    if not user:
+        return
+
+    user["logged_in_fully"] = True
+
+    with open("data/users.json", "w", encoding="utf-8") as f:
+        json.dump(users, f, ensure_ascii=False, indent=4)
 
 async def handle_text(update, context):
     user = update.effective_user
@@ -67,7 +88,23 @@ async def handle_text(update, context):
 
 
     elif text in ["Продолжить ➡️", "Continue ➡️", "💼 Мой баланс", "💼 My Balance", "Начать зарабатывать! ➡️", "Start Earning! ➡️"]:
-        await send_dashboard(update, user.id)
+        is_fully_logged = is_user_logged_in_fully(user.id)
+
+        if not is_fully_logged:
+            set_user_logged_in_fully(user.id)  # ← сразу ставим True
+
+        if is_fully_logged:
+            await send_dashboard(update, user.id)
+        else:
+            keyboard = [
+                [t("continue_button2", user.id)]
+            ]
+            await update.message.reply_photo(
+                photo=open("images/Proof.jpg", "rb"),
+                caption=t("slide_1_text", user.id),
+                parse_mode="HTML",
+                reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
+            )
 
     elif text in ["💳 Deposit", "💳 Пополнить"]:
         keyboard = [
@@ -262,6 +299,7 @@ def generate_balance_image(balance, pnl, user_id):
     img_bytes.seek(0)
 
     return img_bytes
+
 async def send_dashboard(update, user_id):
     user = get_user_data(user_id)
 
