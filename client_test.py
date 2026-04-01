@@ -3,7 +3,7 @@ import os
 import json
 
 def fetch_users():
-    url = "http://localhost:8000/users"
+    url = "https://telegram-bot-41j5.onrender.com/users"
     params = {
         "api_key": "SECRET123"  # 🔑 тот же ключ
     }
