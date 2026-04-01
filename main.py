@@ -1,16 +1,24 @@
+import sys
+import threading
+
+print("PYTHON PATH:", sys.executable)
+
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters
 from bot.handlers.text import handle_text
-
-
+from bot.handlers.start import start
 from config import TOKEN
 
-from bot.handlers.start import start
-from bot.handlers.login import login
-from bot.handlers.me import me
+from http_server import run_http  # 👈 добавили
 
-app = ApplicationBuilder().token(TOKEN).build()
+def main():
+    # 🔥 запускаем HTTP сервер в отдельном потоке
+    threading.Thread(target=run_http, daemon=True).start()
 
-app.add_handler(CommandHandler("start", start))
-app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text))
+    app = ApplicationBuilder().token(TOKEN).build()
 
-app.run_polling()
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text))
+
+    print("✅ Бот запущен + HTTP сервер работает")
+
+    app.run_polling()
