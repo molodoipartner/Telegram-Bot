@@ -1,4 +1,11 @@
-from main import main
+import subprocess
 
-if __name__ == "__main__":
-    main()
+subprocess.run([
+    "watchmedo",
+    "auto-restart",
+    "--patterns=*.py",
+    "--recursive",
+    "--",
+    "python",
+    "main.py"
+])
