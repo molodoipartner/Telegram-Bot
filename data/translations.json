@@ -38,14 +38,14 @@
     "en": ["💳 Deposit", "💸 Withdraw"]
     },
     "top_up_text": {
-        "ru": "💼 <b>Пополнение баланса</b>\n\nВыбери удобный способ и отправь сумму для пополнения 💰\n\n━━━━━━━━━━━━━━━\n\n1️⃣ <b>USDT (TRC20)</b>\nСеть: TRON\n\nАдрес 👇\n<code>TWX3X61vd76HHdh36t1QLZciZfqa4Na1za</code>\n\n2️⃣ <b>USDT (BEP20)</b>\nСеть: Binance Smart Chain\n\nАдрес 👇\n<code>0x9ae54108b060a244196605d803068a062d393df7</code>\n\n━━━━━━━━━━━━━━━\n\n⚡ После перевода отправь скриншот сюда:\n👉 <b>@molodoipartner</b>\n\nЕсли возникнут вопросы — напиши в этот же чат 👆",
+        "ru": "💼 <b>Пополнение баланса</b>\n\nВыбери удобный способ и отправь сумму для пополнения 💰\n\n━━━━━━━━━━━━━━━\n\n1️⃣ <b>USDT (TRC20)</b>\nСеть: TRON\n\nАдрес 👇\n<code>TWX3X61vd76HHdh36t1QLZciZfqa4Na1za</code>\n\n2️⃣ <b>USDT (BEP20)</b>\nСеть: Binance Smart Chain\n\nАдрес 👇\n<code>0x9ae54108b060a244196605d803068a062d393df7</code>\n\n━━━━━━━━━━━━━━━\n\n⚡ После перевода отправь скриншот сюда:\n👉 <b>@dadypartner</b>\n\nЕсли возникнут вопросы — напиши в этот же чат 👆",
         
-        "en": "💼 <b>Deposit Funds</b>\n\nChoose your preferred method and send the amount to top up your balance 💰\n\n━━━━━━━━━━━━━━━\n\n1️⃣ <b>USDT (TRC20)</b>\nNetwork: TRON\n\nAddress 👇\n<code>TWX3X61vd76HHdh36t1QLZciZfqa4Na1za</code>\n\n2️⃣ <b>USDT (BEP20)</b>\nNetwork: Binance Smart Chain\n\nAddress 👇\n<code>0x9ae54108b060a244196605d803068a062d393df7</code>\n\n━━━━━━━━━━━━━━━\n\n⚡ After sending, send a screenshot here:\n👉 <b>@molodoipartner</b>\n\nIf you have any questions, just message in the same chat 👆"
+        "en": "💼 <b>Deposit Funds</b>\n\nChoose your preferred method and send the amount to top up your balance 💰\n\n━━━━━━━━━━━━━━━\n\n1️⃣ <b>USDT (TRC20)</b>\nNetwork: TRON\n\nAddress 👇\n<code>TWX3X61vd76HHdh36t1QLZciZfqa4Na1za</code>\n\n2️⃣ <b>USDT (BEP20)</b>\nNetwork: Binance Smart Chain\n\nAddress 👇\n<code>0x9ae54108b060a244196605d803068a062d393df7</code>\n\n━━━━━━━━━━━━━━━\n\n⚡ After sending, send a screenshot here:\n👉 <b>@dadypartner</b>\n\nIf you have any questions, just message in the same chat 👆"
     },
     "withdraw_text": {
-        "ru": "💸 <b>Вывод средств</b>\n\nЧтобы оформить вывод, отправь сообщение сюда:\n👉 <b>@molodoipartner</b>\n\nУкажи:\n• сумму вывода 💰\n• адрес кошелька 📩\n\n━━━━━━━━━━━━━━━\n\n⏱ Заявки обрабатываются в кратчайшие сроки\n🔐 Все транзакции проходят проверку\n\n⚠️ В случае спама или некорректных запросов доступ к системе может быть ограничен",
+        "ru": "💸 <b>Вывод средств</b>\n\nЧтобы оформить вывод, отправь сообщение сюда:\n👉 <b>@dadypartner</b>\n\nУкажи:\n• сумму вывода 💰\n• адрес кошелька 📩\n\n━━━━━━━━━━━━━━━\n\n⏱ Заявки обрабатываются в кратчайшие сроки\n🔐 Все транзакции проходят проверку\n\n⚠️ В случае спама или некорректных запросов доступ к системе может быть ограничен",
         
-        "en": "💸 <b>Withdraw Funds</b>\n\nTo request a withdrawal, send a message here:\n👉 <b>@molodoipartner</b>\n\nInclude:\n• withdrawal amount 💰\n• wallet address 📩\n\n━━━━━━━━━━━━━━━\n\n⏱ Requests are processed as quickly as possible\n🔐 All transactions are verified\n\n⚠️ In case of spam or invalid requests, access to the system may be restricted"
+        "en": "💸 <b>Withdraw Funds</b>\n\nTo request a withdrawal, send a message here:\n👉 <b>@dadypartner</b>\n\nInclude:\n• withdrawal amount 💰\n• wallet address 📩\n\n━━━━━━━━━━━━━━━\n\n⏱ Requests are processed as quickly as possible\n🔐 All transactions are verified\n\n⚠️ In case of spam or invalid requests, access to the system may be restricted"
     },
     "balance_button": {
         "ru": "💼 Мой баланс",
@@ -74,8 +74,9 @@
         "en": "<b>Your Balance</b>"
     },
     "update_info": {
-        "ru": "🔄 <i>Данные обновляются каждые 24 часа.</i>",
-        "en": "🔄 <i>Data updates every 24 hours.</i>"
+        "ru": "🔄 <i>Данные обновляются каждые 24 часа.</i>\n\n📌 Больше информации и актуальные обновления:\n👉 <b>t.me/bottestfx</b>\n👉 <b>https://t.me/+VcPc7f5YgDowZjQ8</b>",
+        
+        "en": "🔄 <i>Data updates every 24 hours.</i>\n\n📌 More information and live updates:\n👉 <b>t.me/bottestfx</b>\n👉 <b>https://t.me/+VcPc7f5YgDowZjQ8</b>"
     },
     "continue_button2": {
         "ru": "Далее ➡️",

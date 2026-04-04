@@ -6,6 +6,10 @@ print("PYTHON PATH:", sys.executable)
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters
 from bot.handlers.text import handle_text
 from bot.handlers.start import start
+from bot.handlers.wallet import wallet
+from bot.handlers.deposit import deposit
+from bot.handlers.withdraw import withdraw
+
 from config import TOKEN
 
 from http_server import run_http  # 👈 добавили
@@ -18,6 +22,9 @@ def main():
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text))
+    app.add_handler(CommandHandler("wallet", wallet))
+    app.add_handler(CommandHandler("deposit", deposit))
+    app.add_handler(CommandHandler("withdraw", withdraw))
 
     print("✅ Бот запущен + HTTP сервер работает")
 

@@ -107,7 +107,10 @@ async def handle_text(update, context):
             await send_welcome(update, user.id)
 
 
-    elif text in ["Продолжить ➡️", "Continue ➡️", "💼 Мой баланс", "💼 My Balance", "Начать зарабатывать! ➡️", "Start Earning! ➡️"]:
+
+    elif text in ["Продолжить ➡️", "Continue ➡️", "💼 Мой баланс", "💼 My Balance", "Начать зарабатывать! ➡️", "Start Earning! ➡️", "/wallet",]:
+       
+       
         is_fully_logged = is_user_logged_in_fully(user.id)
 
         if not is_fully_logged:

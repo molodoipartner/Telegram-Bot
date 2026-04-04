@@ -4,7 +4,8 @@
         "logged_in": true,
         "language": "en",
         "balance": 0.0,
-        "P&L": 0.0
+        "P&L": 0.0,
+        "logged_in_fully": true
     },
     "7430160023": {
         "username": "vaikemunn",
@@ -38,9 +39,9 @@
         "username": "molodoipartner",
         "logged_in": true,
         "logged_in_fully": true,
-        "logged_in_at": "2026-04-01T23:23:40.224066",
-        "language": "ru",
-        "balance": 167,
-        "P&L": 0.0
+        "logged_in_at": "2026-04-02T00:10:47.275548",
+        "language": "en",
+        "balance": -144,
+        "P&L": -124
     }
 }
