@@ -69,10 +69,14 @@ async def handle_text(update, context):
     # ❌ если не залогинен → редирект в start()
     if text not in allowed:
         if not (existing_user and existing_user.get("logged_in")):
-            await start(update, context)  # 🔥 вот ключевая строка
+            await start(update, context)
             return
         
 
+    if (existing_user and not existing_user.get("logged_in_fully")):
+        await send_welcome(update, user.id) 
+        return
+        
 
     if text == "🇷🇺 Русский":
         was_logged_in = is_user_logged_in(user.id)
@@ -146,26 +150,25 @@ async def handle_text(update, context):
 
         # 🔵 Если нет → отправляем слайд
         else:
-            keyboard = [
-                [InlineKeyboardButton("💸 Закрыть финансовые вопросы", callback_data="q1_a1")],
-                [InlineKeyboardButton("📈 Увеличить капитал", callback_data="q1_a2")],
-                [InlineKeyboardButton("🌴 Больше свободы", callback_data="q1_a3")],
-                [InlineKeyboardButton("🔍 Просто изучаю", callback_data="q1_a4")]
-            ]
-            # 👉 УДАЛЯЕМ старую клавиатуру
-            await update.message.reply_text(
-                "⬇️",
-                reply_markup=ReplyKeyboardRemove()
-            )
-            await update.message.reply_photo(
-                photo=open("images/Proof.jpg", "rb"),
-                caption=t("question_1", user.id),
-                parse_mode="HTML",
-                reply_markup=InlineKeyboardMarkup(keyboard)
-            )
+            await send_welcome(update, user.id) 
 
 
 
+    elif text in ["🤑 Monthly Profit", "🤑 Доход за месяц"]:
+        last_message_id = get_last_message_id(user.id)
+
+        # 🟢 Удаляем старое сообщение
+        if last_message_id:
+            try:
+                await context.bot.delete_message(
+                    chat_id=update.effective_chat.id,
+                    message_id=last_message_id
+                )
+            except Exception as e:
+                print("Ошибка удаления:", e)
+
+        msg = await send_Monthly_Profit(update, user.id)
+        set_last_message_id(user.id, msg.message_id)
 
 
     elif text in ["💳 Deposit", "💳 Пополнить"]:
@@ -287,21 +290,20 @@ async def handle_callback(update, context):
 
     print("Callback:", data)
 
+    # 👉 START QUIZ
     if data.startswith("start_quiz"):
         keyboard = [
-            [InlineKeyboardButton("💸 Закрыть финансовые вопросы", callback_data="q1_a1")],
-            [InlineKeyboardButton("📈 Увеличить капитал", callback_data="q1_a2")],
-            [InlineKeyboardButton("🌴 Больше свободы", callback_data="q1_a3")],
-            [InlineKeyboardButton("🔍 Просто изучаю", callback_data="q1_a4")]
+            [InlineKeyboardButton(t("answer_1_to_question_1", user.id), callback_data="q1_a1")],
+            [InlineKeyboardButton(t("answer_2_to_question_1", user.id), callback_data="q1_a2")],
+            [InlineKeyboardButton(t("answer_3_to_question_1", user.id), callback_data="q1_a3")],
+            [InlineKeyboardButton(t("answer_4_to_question_1", user.id), callback_data="q1_a4")]
         ]
 
-        # 👉 2. удаляем старое сообщение (welcome)
         try:
             await query.message.delete()
         except:
             pass
 
-        # 👉 3. отправляем новый экран (первый вопрос)
         await context.bot.send_photo(
             chat_id=user.id,
             photo=open("images/image.png", "rb"),
@@ -309,14 +311,14 @@ async def handle_callback(update, context):
             parse_mode="HTML",
             reply_markup=InlineKeyboardMarkup(keyboard)
         )
-        
-    # 👉 Вопрос 1 → Вопрос 2
-    if data.startswith("q1_"):
+
+    # 👉 Q1 → Q2
+    elif data.startswith("q1_"):
         keyboard = [
-            [InlineKeyboardButton("🤖 Пассивный доход", callback_data="q2_a1")],
-            [InlineKeyboardButton("⚙️ Автомат с контролем", callback_data="q2_a2")],
-            [InlineKeyboardButton("📊 Самостоятельно", callback_data="q2_a3")],
-            [InlineKeyboardButton("🔍 Изучаю", callback_data="q2_a4")]
+            [InlineKeyboardButton(t("answer_1_to_question_2", user.id), callback_data="q2_a1")],
+            [InlineKeyboardButton(t("answer_2_to_question_2", user.id), callback_data="q2_a2")],
+            [InlineKeyboardButton(t("answer_3_to_question_2", user.id), callback_data="q2_a3")],
+            [InlineKeyboardButton(t("answer_4_to_question_2", user.id), callback_data="q2_a4")]
         ]
 
         await query.message.edit_media(
@@ -328,13 +330,13 @@ async def handle_callback(update, context):
             reply_markup=InlineKeyboardMarkup(keyboard)
         )
 
-    # 👉 Вопрос 2 → Вопрос 3
+    # 👉 Q2 → Q3
     elif data.startswith("q2_"):
         keyboard = [
-            [InlineKeyboardButton("📈 Стабильный рост", callback_data="q3_a1")],
-            [InlineKeyboardButton("🚀 Быстрый рост", callback_data="q3_a2")],
-            [InlineKeyboardButton("💰 Пассивный доход", callback_data="q3_a3")],
-            [InlineKeyboardButton("🧪 Протестировать", callback_data="q3_a4")]
+            [InlineKeyboardButton(t("answer_1_to_question_3", user.id), callback_data="q3_a1")],
+            [InlineKeyboardButton(t("answer_2_to_question_3", user.id), callback_data="q3_a2")],
+            [InlineKeyboardButton(t("answer_3_to_question_3", user.id), callback_data="q3_a3")],
+            [InlineKeyboardButton(t("answer_4_to_question_3", user.id), callback_data="q3_a4")]
         ]
 
         await query.message.edit_media(
@@ -346,13 +348,13 @@ async def handle_callback(update, context):
             reply_markup=InlineKeyboardMarkup(keyboard)
         )
 
-    # 👉 Вопрос 3 → Вопрос 4
+    # 👉 Q3 → Q4
     elif data.startswith("q3_"):
         keyboard = [
-            [InlineKeyboardButton("📈 Очень важно", callback_data="q4_a1")],
-            [InlineKeyboardButton("👍 Важно", callback_data="q4_a2")],
-            [InlineKeyboardButton("🤷 Не критично", callback_data="q4_a3")],
-            [InlineKeyboardButton("❓ Не думал об этом", callback_data="q4_a4")]
+            [InlineKeyboardButton(t("answer_1_to_question_4", user.id), callback_data="q4_a1")],
+            [InlineKeyboardButton(t("answer_2_to_question_4", user.id), callback_data="q4_a2")],
+            [InlineKeyboardButton(t("answer_3_to_question_4", user.id), callback_data="q4_a3")],
+            [InlineKeyboardButton(t("answer_4_to_question_4", user.id), callback_data="q4_a4")]
         ]
 
         await query.message.edit_media(
@@ -364,26 +366,24 @@ async def handle_callback(update, context):
             reply_markup=InlineKeyboardMarkup(keyboard)
         )
 
+    # 👉 FINISH
     elif data.startswith("q4_"):
-
-        # 👉 удаляем сообщение с квизом
         try:
             await query.message.delete()
         except:
             pass
 
-        # 👉 отправляем сообщение "квиз пройден"
         await query.message.reply_text(
             t("finnaly_5_", user.id),
             parse_mode="HTML"
         )
 
-        # 👉 отправляем дашборд
         msg = await send_dashboard2(query.message, user.id)
 
-        # 👉 сохраняем message_id
         if msg and hasattr(msg, "message_id"):
             set_last_message_id(user.id, msg.message_id)
+
+
 
 async def send_welcome(update, user_id):
     keyboard = [
@@ -406,6 +406,10 @@ async def send_welcome(update, user_id):
 def get_dashboard_keyboard(user_id):
     keyboard = [
         [
+            t("dashboard_buttons1", user_id)[0],
+            t("dashboard_buttons1", user_id)[1],
+        ],
+        [
             t("dashboard_buttons", user_id)[0],
             t("dashboard_buttons", user_id)[1],
         ],
@@ -413,6 +417,13 @@ def get_dashboard_keyboard(user_id):
             t("about_button", user_id)[0],
             t("about_button", user_id)[1],
         ]
+    ]
+    return ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
+
+
+def get_monthly_profit_keyboard(user_id):
+    keyboard = [
+        [t("balance_button", user_id)]
     ]
     return ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
 
@@ -546,6 +557,157 @@ async def send_dashboard2(message, user_id):
         caption=t("update_info", user_id),
         parse_mode="HTML",
         reply_markup=get_dashboard_keyboard(user_id)
+    )
+
+    return msg
+
+
+def generate_monthly_profit_image(balance, user_id):
+
+    width, height = 900, 720
+    img = Image.new("RGB", (width, height), color=(3, 12, 30))
+    draw = ImageDraw.Draw(img)
+
+    # 📁 Шрифты
+    font_path_regular = os.path.abspath("fonts/ttf/DejaVuSans.ttf")
+    font_path_bold = os.path.abspath("fonts/ttf/DejaVuSans-Bold.ttf")
+
+    try:
+        font_title = ImageFont.truetype(font_path_regular, 34)
+        font_small = ImageFont.truetype(font_path_regular, 20)
+        font_bold = ImageFont.truetype(font_path_bold, 24)
+    except:
+        font_title = ImageFont.load_default()
+        font_small = ImageFont.load_default()
+        font_bold = ImageFont.load_default()
+
+    # 📊 Заголовок
+    title = t("growth_projection", user_id)
+    draw.text((60, 30), title, fill=(160, 180, 210), font=font_title)
+
+    # 📈 настройки
+    total_weeks = 20  # 5 месяцев
+    growth = 1.05     # 5% в неделю
+
+    # 📈 генерация данных
+    def generate_values(start):
+        values = [start]
+        for _ in range(total_weeks):
+            values.append(values[-1] * growth)
+        return values
+
+    user_values = generate_values(balance)
+
+    base_compare = max(balance * 2, balance + 500)
+    high_compare = max(base_compare * 3, base_compare + 100)
+
+    demo_values = generate_values(base_compare)
+    high_values = generate_values(high_compare)
+
+    # 📐 график
+    graph_x1, graph_y1 = 80, 120
+    graph_x2, graph_y2 = 840, 520
+
+    draw.rectangle([graph_x1, graph_y1, graph_x2, graph_y2], outline=(50, 70, 100))
+
+    # 📊 масштаб
+    all_values = user_values + demo_values + high_values
+    max_value = max(all_values)
+    min_value = -max_value * 0.05
+
+    def get_xy(index, value):
+        x = graph_x1 + (index / total_weeks) * (graph_x2 - graph_x1)
+        y = graph_y2 - ((value - min_value) / (max_value - min_value)) * (graph_y2 - graph_y1)
+        return x, y
+
+    # 📍 линии месяцев
+    for m in range(1, 6):
+        week_index = m * 4
+        x, _ = get_xy(week_index, 0)
+
+        draw.line(
+            [(x, graph_y1), (x, graph_y2)],
+            fill=(80, 100, 140),
+            width=1
+        )
+
+        draw.text(
+            (x - 40, graph_y1 - 25),
+            f"{m} {t('month_short', user_id)}",
+            fill=(140, 160, 200),
+            font=font_small
+        )
+
+    # 📈 линии
+    user_points = [get_xy(i, v) for i, v in enumerate(user_values)]
+    demo_points = [get_xy(i, v) for i, v in enumerate(demo_values)]
+    high_points = [get_xy(i, v) for i, v in enumerate(high_values)]
+
+    draw.line(user_points, fill=(0, 200, 120), width=4)
+    draw.line(demo_points, fill=(80, 160, 255), width=3)
+    draw.line(high_points, fill=(255, 140, 40), width=4)
+
+    # 🔘 точки
+    for p in user_points:
+        draw.ellipse((p[0]-3, p[1]-3, p[0]+3, p[1]+3), fill=(0, 255, 150))
+
+    for p in demo_points:
+        draw.ellipse((p[0]-2, p[1]-2, p[0]+2, p[1]+2), fill=(120, 180, 255))
+
+    for p in high_points:
+        draw.ellipse((p[0]-2, p[1]-2, p[0]+2, p[1]+2), fill=(255, 200, 120))
+
+    # 📅 X ось
+    week_label = t("week_short", user_id)
+    for i in range(0, total_weeks + 1, 2):
+        x, _ = get_xy(i, 0)
+        draw.text((x-10, graph_y2 + 10), f"{i}{week_label}", fill=(120, 140, 180), font=font_small)
+
+    # 💰 Y ось
+    steps = 6
+    for i in range(steps + 1):
+        val = min_value + (max_value - min_value) * i / steps
+        y = graph_y2 - (i / steps) * (graph_y2 - graph_y1)
+        draw.text((20, y-8), f"{int(max(val,0))}$", fill=(120, 140, 180), font=font_small)
+
+    # 📌 ЛЕГЕНДА В СТОЛБИК 👇
+    legend_y = 580
+    gap = 30
+
+    final_balance = balance * (1.05 ** 20)
+
+    draw.text((80, legend_y), 
+        f"● {t('your_balance_label', user_id)} "
+        f"({int(balance)}$ → {int(final_balance)}$ {t('in_5_months', user_id)})",
+        fill=(0, 200, 120), font=font_small)
+
+    draw.text((80, legend_y + gap), 
+        f"● {t('start_deposit_label', user_id)} {int(base_compare)}$",
+        fill=(120, 180, 255), font=font_small)
+
+    draw.text((80, legend_y + gap*2), 
+        f"● {t('advanced_deposit_label', user_id)} {int(high_compare)}$",
+        fill=(255, 140, 40), font=font_small)
+
+    # 💾 сохранить
+    img_bytes = io.BytesIO()
+    img.save(img_bytes, format="PNG")
+    img_bytes.seek(0)
+
+    return img_bytes
+
+
+async def send_Monthly_Profit(update, user_id):
+    user = get_user_data(user_id)
+    balance = user.get("balance", 0.0)
+
+    image = generate_monthly_profit_image(balance, user_id)
+
+    msg = await update.message.reply_photo(
+        photo=image,
+        caption=t("monthly_growth_description", user_id),
+        parse_mode="HTML",
+        reply_markup=get_monthly_profit_keyboard(user_id)
     )
 
     return msg

@@ -42,6 +42,14 @@
     
     "en": "💰 <b>Balance: $20.5</b>\n\n📊 <b>System:</b> Active\n📈 <b>Today:</b> +3.2%\n\n━━━━━━━━━━━━━━━\n\n⚡ The bot automatically analyzes the market and executes trades based on a proven statistical strategy.\n\n💡 Keep the system running — everything else is already calculated."
     },
+    "dashboard_buttons1": {
+    "ru": ["🤑 Доход за месяц", "⚠️ Риски"],
+    "en": ["🤑 Monthly Profit", "⚠️ Risks"]
+    },
+    "Monthly_Profit": {
+    "ru": ".......",
+    "en": "......."
+    },
     "dashboard_buttons": {
     "ru": ["💳 Пополнить", "💸 Вывести"],
     "en": ["💳 Deposit", "💸 Withdraw"]
@@ -80,9 +88,9 @@
         "en": "<b>Your Balance</b>"
     },
     "update_info": {
-        "ru": "🔄 <i>Данные обновляются каждые 24 часа.</i>\n\n📌 Больше информации и актуальные обновления:\n👉 <b>t.me/bottestfx</b>\n👉 <b>https://t.me/+VcPc7f5YgDowZjQ8</b>",
+        "ru": "🤖 <b>Бот уже подключён и работает с твоим текущим балансом</b> 📊\n\n📈 <b>Средняя доходность:</b> около 20% в месяц\n\n🔄 <i>Данные обновляются каждые 24 часа.</i>\n\n📌 Подробная информация и обновления по твоему боту:\n👉 <b>t.me/bottestfx</b>\n👉 <b>https://t.me/+VcPc7f5YgDowZjQ8</b>",
         
-        "en": "🔄 <i>Data updates every 24 hours.</i>\n\n📌 More information and live updates:\n👉 <b>t.me/bottestfx</b>\n👉 <b>https://t.me/+VcPc7f5YgDowZjQ8</b>"
+        "en": "🤖 <b>Your bot is already connected and working with your current balance</b> 📊\n\n📈 <b>Average return:</b> around 20% per month\n\n🔄 <i>Data updates every 24 hours.</i>\n\n📌 More details and updates about your bot:\n👉 <b>t.me/bottestfx</b>\n👉 <b>https://t.me/+VcPc7f5YgDowZjQ8</b>"
     },
     "continue_button2": {
         "ru": "Далее ➡️",
@@ -111,23 +119,23 @@
         },
     "question_1": {
         "ru": "💸 <b>Зачем вам сейчас дополнительный доход?</b>",
-        "en": "💸 <b>Why do you need additional income right now?</b>"
+        "en": "💸 <b>Why are you looking for extra income right now?</b>"
     },
     "answer_1_to_question_1": {
-        "ru": "Хочу закрыть финансовые вопросы",
-        "en": "I want to solve my financial needs"
+        "ru": "💸 Закрыть финансовые вопросы",
+        "en": "💸 Cover my financial needs"
     },
     "answer_2_to_question_1": {
-        "ru": "Хочу увеличить свой капитал",
-        "en": "I want to grow my capital"
+        "ru": "📈 Увеличить капитал",
+        "en": "📈 Grow my capital"
     },
     "answer_3_to_question_1": {
-        "ru": "Хочу больше свободы и возможностей",
-        "en": "I want more freedom and opportunities"
+        "ru": "🌴 Больше свободы и возможностей",
+        "en": "🌴 Gain more freedom and opportunities"
     },
     "answer_4_to_question_1": {
-        "ru": "Просто ищу новые способы заработка",
-        "en": "I'm exploring new ways to earn"
+        "ru": "🔍 Изучаю новые способы заработка",
+        "en": "🔍 Exploring new income opportunities"
     },
 
     "question_2": {
@@ -135,62 +143,62 @@
         "en": "🤖 <b>What type of earning suits you best?</b>"
     },
     "answer_1_to_question_2": {
-        "ru": "Пассивный доход без лишних действий",
-        "en": "Passive income with minimal effort"
+        "ru": "🤖 Пассивный доход",
+        "en": "🤖 Passive income"
     },
     "answer_2_to_question_2": {
-        "ru": "Автоматическая система с контролем",
-        "en": "Automated system with some control"
+        "ru": "⚙️ Автоматизация с контролем",
+        "en": "⚙️ Automated system with control"
     },
     "answer_3_to_question_2": {
-        "ru": "Самостоятельная торговля",
-        "en": "Manual trading"
+        "ru": "📊 Самостоятельная торговля",
+        "en": "📊 Manual trading"
     },
     "answer_4_to_question_2": {
-        "ru": "Пока изучаю варианты",
-        "en": "Still exploring options"
+        "ru": "🔍 Пока изучаю",
+        "en": "🔍 Still exploring"
     },
 
     "question_3": {
-        "ru": "🚀 <b>Какой результат вас действительно мотивирует?</b>",
-        "en": "🚀 <b>What kind of result motivates you the most?</b>"
+        "ru": "🚀 <b>Какой результат вас больше всего мотивирует?</b>",
+        "en": "🚀 <b>What result motivates you the most?</b>"
     },
     "answer_1_to_question_3": {
-        "ru": "Стабильный рост баланса каждый месяц",
-        "en": "Stable monthly balance growth"
+        "ru": "📈 Стабильный рост каждый месяц",
+        "en": "📈 Stable monthly growth"
     },
     "answer_2_to_question_3": {
-        "ru": "Быстрый рост депозита",
-        "en": "Fast deposit growth"
+        "ru": "🚀 Быстрый рост депозита",
+        "en": "🚀 Fast capital growth"
     },
     "answer_3_to_question_3": {
-        "ru": "Дополнительный доход без усилий",
-        "en": "Extra income with minimal effort"
+        "ru": "💰 Пассивный доход",
+        "en": "💰 Passive income"
     },
     "answer_4_to_question_3": {
-        "ru": "Хочу сначала протестировать",
-        "en": "I want to test first"
+        "ru": "🧪 Хочу протестировать",
+        "en": "🧪 I want to test it first"
     },
 
     "question_4": {
-        "ru": "📈 <b>Насколько вам важно видеть результат в реальном времени?</b>",
-        "en": "📈 <b>How important is it for you to see results in real time?</b>"
+        "ru": "📈 <b>Насколько важно видеть результат в реальном времени?</b>",
+        "en": "📈 <b>How important is it to track results in real time?</b>"
     },
     "answer_1_to_question_4": {
-        "ru": "Очень важно — хочу видеть рост баланса",
-        "en": "Very important — I want to see balance growth"
+        "ru": "📈 Очень важно",
+        "en": "📈 Very important"
     },
     "answer_2_to_question_4": {
-        "ru": "Важно, но без лишней сложности",
-        "en": "Important, but without complexity"
+        "ru": "👍 Важно",
+        "en": "👍 Important"
     },
     "answer_3_to_question_4": {
-        "ru": "Не критично, главное результат",
-        "en": "Not critical, result matters more"
+        "ru": "🤷 Не критично",
+        "en": "🤷 Not critical"
     },
     "answer_4_to_question_4": {
-        "ru": "Пока не задумывался об этом",
-        "en": "Haven’t really thought about it"
+        "ru": "❓ Не задумывался",
+        "en": "❓ Haven’t thought about it"
     },
     "finnaly_5_": {
         "ru": "✅ <b>Квиз пройден!</b>\n\nНа основе твоих ответов мы подобрали и подключили тебя к наиболее подходящему торговому боту из доступных 📊\n\n⚡ Бот уже настроен и готов к работе\n\n💰 Пополни баланс, чтобы начать зарабатывать прямо сейчас 👇",
@@ -198,9 +206,50 @@
         "en": "✅ <b>Quiz completed!</b>\n\nBased on your answers, we have matched and connected you to the most suitable trading bot available 📊\n\n⚡ The bot is fully set up and ready to go\n\n💰 Top up your balance to start earning right now 👇"
     },
     "welcome_text_log": { 
-        "ru": "🚀 <b>Добро пожаловать в торгового бота</b>\n\nУникальный инструмент для работы с алгоритмической стратегией на рынке крипты 📊\n\n🔐 Безопасное хранение средств\n⚡ Быстрое пополнение и вывод\n📱 Простое и понятное управление\n\n📈 Бот автоматически исполняет сделки по стратегии\n\nБез лишних действий\nБез сложных настроек\n\n💰 Подключайся и используй возможности алгоритмической торговли\n\n🚀 Всё уже настроено — можно начинать",
+        "ru": "🚀 <b>Добро пожаловать в торгового бота (Trading Magnet)</b>\n\n📈 Инструмент для автоматической торговли",
         
-        "en": "🚀 <b>Welcome to the trading bot</b>\n\nA unique tool for working with an algorithmic strategy on the cryptocurrency market 📊\n\n🔐 Secure fund storage\n⚡ Fast deposits and withdrawals\n📱 Simple and intuitive interface\n\n📈 The bot automatically executes trades based on the strategy\n\nNo complexity\nNo manual setup\n\n💰 Get started and leverage algorithmic trading\n\n🚀 Everything is ready — you can begin"
+        "en": "🚀 <b>Welcome to the trading bot (Trading Magnet)</b>\n\n📈 A tool for automated trading"
+    },
+    "growth_projection": {
+        "ru": "Прогноз роста баланса",
+        "en": "Balance Growth Projection"
+    },
+
+    "week_short": {
+        "ru": "н",
+        "en": "w"
+    },
+
+    "your_balance_label": {
+        "ru": "Твой нынешний баланс",
+        "en": "Your current balance"
+    },
+
+    "start_deposit_label": {
+        "ru": "Пример баланс",
+        "en": "Example balance"
+    },
+
+    "advanced_deposit_label": {
+        "ru": "Продвинутый баланс",
+        "en": "Advanced balance"
+    },
+    "after_one_month": {
+        "ru": "Через 1 месяц",
+        "en": "After 1 month"
+    },
+    "month_short": {
+        "ru": "мес",
+        "en": "mo"
+    },
+    "monthly_growth_description": {
+        "ru": "📊 <b>Прогноз роста твоего баланса</b>\n\nЭтот график показывает, как может расти твой депозит при работе бота 📈\n\n🟢 Зелёная линия — твой текущий баланс\n🔵 Синяя — пример при увеличении депозита\n🟠 Оранжевая — более высокий старт\n\n💡 Как видно, чем больше стартовый баланс — тем сильнее итоговый рост\n\n🚀 Увеличивая депозит, ты ускоряешь накопление прибыли и выходишь на новый уровень дохода",
+        
+        "en": "📊 <b>Balance Growth Projection</b>\n\nThis chart shows how your deposit can grow while the bot is running 📈\n\n🟢 Green line — your current balance\n🔵 Blue line — example with a higher deposit\n🟠 Orange line — advanced starting amount\n\n💡 As you can see, a higher starting balance leads to significantly greater results\n\n🚀 By increasing your deposit, you accelerate profit growth and reach a new income level"
+    },
+    "in_5_months": {
+        "ru": "через 5 мес.",
+        "en": "in 5 mo."
     }
 
 }
