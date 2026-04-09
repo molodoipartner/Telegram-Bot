@@ -1,12 +1,14 @@
-from bot.services.user_service import login_user
+from bot.services.user_service import get_last_message_id, login_user, get_user, set_language, set_last_message_id
 from bot.utils.file_db import load_users, save_users
 from bot.utils.i18n import t, get_image
-from telegram import ReplyKeyboardRemove, ReplyKeyboardMarkup
+from telegram import ReplyKeyboardRemove, ReplyKeyboardMarkup, InputMediaPhoto, InlineKeyboardMarkup, InlineKeyboardButton
+
+
+
 import json
 from PIL import Image, ImageDraw, ImageFont
 import io
 from bot.handlers.start import start
-from bot.services.user_service import get_user
 import os
 
 def set_user_language(user_id, language):
@@ -70,88 +72,163 @@ async def handle_text(update, context):
             await start(update, context)  # 🔥 вот ключевая строка
             return
         
+
+
     if text == "🇷🇺 Русский":
-        was_logged_in = is_user_logged_in(user.id)  # ← сохраняем ДО логина
+        was_logged_in = is_user_logged_in(user.id)
 
         if not was_logged_in:
-            login_user(user.id, user.username, "ru")  # ← обновляем пользователя
+            login_user(user.id, user.username, "ru")
         else:
-            set_user_language(user.id, "ru")  # ← ВАЖНО
-
-        await update.message.reply_text(
-            t("language_set", user.id),
-            reply_markup=ReplyKeyboardRemove()
-        )
+            set_user_language(user.id, "ru")
 
         if was_logged_in:
-            await send_dashboard(update, user.id)
+            msg = await send_dashboard(update, user.id)
         else:
-            await send_welcome(update, user.id)
+            msg = await send_welcome(update, user.id)
+
+        # 💾 безопасное сохранение message_id
+        if msg and hasattr(msg, "message_id"):
+            set_last_message_id(user.id, msg.message_id)
+        else:
+            print(f"[INFO] No message_id for user {user.id} (ru)")
 
 
     elif text == "🇬🇧 English":
-        was_logged_in = is_user_logged_in(user.id)  # ← сохраняем ДО логина
+        was_logged_in = is_user_logged_in(user.id)
+
         if not was_logged_in:
             login_user(user.id, user.username, "en")
         else:
-            set_user_language(user.id, "en")  # ← ВАЖНО
-
-        await update.message.reply_text(
-            t("language_set", user.id),
-            reply_markup=ReplyKeyboardRemove()
-        )
+            set_user_language(user.id, "en")
 
         if was_logged_in:
-            await send_dashboard(update, user.id)
+            msg = await send_dashboard(update, user.id)
         else:
-            await send_welcome(update, user.id)
+            msg = await send_welcome(update, user.id)
+
+        # 💾 безопасное сохранение message_id
+        if msg and hasattr(msg, "message_id"):
+            set_last_message_id(user.id, msg.message_id)
+        else:
+            print(f"[INFO] No message_id for user {user.id} (en)")
 
 
 
-    elif text in ["Продолжить ➡️", "Continue ➡️", "💼 Мой баланс", "💼 My Balance", "Начать зарабатывать! ➡️", "Start Earning! ➡️", "/wallet",]:
-       
-       
+    elif text in [
+        "Продолжить ➡️", "Continue ➡️",
+        "💼 Мой баланс", "💼 My Balance",
+        "Начать зарабатывать! ➡️", "Start Earning! ➡️",
+        "/wallet"
+    ]:
+
         is_fully_logged = is_user_logged_in_fully(user.id)
 
         if not is_fully_logged:
-            set_user_logged_in_fully(user.id)  # ← сразу ставим True
+            set_user_logged_in_fully(user.id)
 
+        last_message_id = get_last_message_id(user.id)
+
+        # 🟢 Удаляем старое сообщение (если есть)
+        if last_message_id:
+            try:
+                await context.bot.delete_message(
+                    chat_id=update.effective_chat.id,
+                    message_id=last_message_id
+                )
+            except Exception as e:
+                print("Ошибка удаления:", e)
+
+        # 🔥 Если уже залогинен → dashboard
         if is_fully_logged:
-            await send_dashboard(update, user.id)
+            msg = await send_dashboard(update, user.id)
+            set_last_message_id(user.id, msg.message_id)
+
+        # 🔵 Если нет → отправляем слайд
         else:
             keyboard = [
-                [t("continue_button2", user.id)]
+                [InlineKeyboardButton("💸 Закрыть финансовые вопросы", callback_data="q1_a1")],
+                [InlineKeyboardButton("📈 Увеличить капитал", callback_data="q1_a2")],
+                [InlineKeyboardButton("🌴 Больше свободы", callback_data="q1_a3")],
+                [InlineKeyboardButton("🔍 Просто изучаю", callback_data="q1_a4")]
             ]
+            # 👉 УДАЛЯЕМ старую клавиатуру
+            await update.message.reply_text(
+                "⬇️",
+                reply_markup=ReplyKeyboardRemove()
+            )
             await update.message.reply_photo(
                 photo=open("images/Proof.jpg", "rb"),
-                caption=t("slide_1_text", user.id),
+                caption=t("question_1", user.id),
                 parse_mode="HTML",
-                reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
+                reply_markup=InlineKeyboardMarkup(keyboard)
             )
 
+
+
+
+
     elif text in ["💳 Deposit", "💳 Пополнить"]:
+
         keyboard = [
             [t("balance_button", user.id)]
         ]
-        await update.message.reply_photo(
+
+        caption = t("top_up_text", user.id)
+
+        last_message_id = get_last_message_id(user.id)
+
+        # 🟢 Удаляем старое сообщение
+        if last_message_id:
+            try:
+                await context.bot.delete_message(
+                    chat_id=update.effective_chat.id,
+                    message_id=last_message_id
+                )
+            except Exception as e:
+                print("Ошибка удаления:", e)
+
+        # 🔵 Отправляем новое
+        msg = await update.message.reply_photo(
             photo=open("images/Deposit.jpg", "rb"),
-            caption=t("top_up_text", user.id),
+            caption=caption,
             parse_mode="HTML",
-            reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
+            reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
         )
+
+        set_last_message_id(user.id, msg.message_id)
 
     elif text in ["💸 Вывести", "💸 Withdraw"]:
+
         keyboard = [
             [t("balance_button", user.id)]
         ]
-        await update.message.reply_photo(
+
+        caption = t("withdraw_text", user.id)
+
+        last_message_id = get_last_message_id(user.id)
+
+        # 🟢 Если есть сообщение → удаляем
+        if last_message_id:
+            try:
+                await context.bot.delete_message(
+                    chat_id=update.effective_chat.id,
+                    message_id=last_message_id
+                )
+            except Exception as e:
+                print("Ошибка удаления:", e)
+
+        # 🔵 Отправляем новое (всегда)
+        msg = await update.message.reply_photo(
             photo=open("images/Withdraw.jpg", "rb"),
-            caption=t("withdraw_text", user.id),
+            caption=caption,
             parse_mode="HTML",
-            reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
+            reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
         )
 
-    elif text in ["ℹ️ О проекте", "ℹ️ About Project"]:
+        set_last_message_id(user.id, msg.message_id)
+
+    elif text in ["ℹ️ Мой бот", "ℹ️ My bot"]:
         keyboard = [
             [t("continue_button2", user.id)]
         ]
@@ -201,19 +278,128 @@ async def handle_text(update, context):
         )
 
 
+async def handle_callback(update, context):
+    query = update.callback_query
+    user = query.from_user
+
+    await query.answer()
+    data = query.data
+
+    print("Callback:", data)
+
+    if data.startswith("start_quiz"):
+        keyboard = [
+            [InlineKeyboardButton("💸 Закрыть финансовые вопросы", callback_data="q1_a1")],
+            [InlineKeyboardButton("📈 Увеличить капитал", callback_data="q1_a2")],
+            [InlineKeyboardButton("🌴 Больше свободы", callback_data="q1_a3")],
+            [InlineKeyboardButton("🔍 Просто изучаю", callback_data="q1_a4")]
+        ]
+
+        # 👉 2. удаляем старое сообщение (welcome)
+        try:
+            await query.message.delete()
+        except:
+            pass
+
+        # 👉 3. отправляем новый экран (первый вопрос)
+        await context.bot.send_photo(
+            chat_id=user.id,
+            photo=open("images/Proof.jpg", "rb"),
+            caption=t("question_1", user.id),
+            parse_mode="HTML",
+            reply_markup=InlineKeyboardMarkup(keyboard)
+        )
+        
+    # 👉 Вопрос 1 → Вопрос 2
+    if data.startswith("q1_"):
+        keyboard = [
+            [InlineKeyboardButton("🤖 Пассивный доход", callback_data="q2_a1")],
+            [InlineKeyboardButton("⚙️ Автомат с контролем", callback_data="q2_a2")],
+            [InlineKeyboardButton("📊 Самостоятельно", callback_data="q2_a3")],
+            [InlineKeyboardButton("🔍 Изучаю", callback_data="q2_a4")]
+        ]
+
+        await query.message.edit_media(
+            media=InputMediaPhoto(
+                media=open("images/Proof.jpg", "rb"),
+                caption=t("question_2", user.id),
+                parse_mode="HTML"
+            ),
+            reply_markup=InlineKeyboardMarkup(keyboard)
+        )
+
+    # 👉 Вопрос 2 → Вопрос 3
+    elif data.startswith("q2_"):
+        keyboard = [
+            [InlineKeyboardButton("📈 Стабильный рост", callback_data="q3_a1")],
+            [InlineKeyboardButton("🚀 Быстрый рост", callback_data="q3_a2")],
+            [InlineKeyboardButton("💰 Пассивный доход", callback_data="q3_a3")],
+            [InlineKeyboardButton("🧪 Протестировать", callback_data="q3_a4")]
+        ]
+
+        await query.message.edit_media(
+            media=InputMediaPhoto(
+                media=open("images/Proof.jpg", "rb"),
+                caption=t("question_3", user.id),
+                parse_mode="HTML"
+            ),
+            reply_markup=InlineKeyboardMarkup(keyboard)
+        )
+
+    # 👉 Вопрос 3 → Вопрос 4
+    elif data.startswith("q3_"):
+        keyboard = [
+            [InlineKeyboardButton("📈 Очень важно", callback_data="q4_a1")],
+            [InlineKeyboardButton("👍 Важно", callback_data="q4_a2")],
+            [InlineKeyboardButton("🤷 Не критично", callback_data="q4_a3")],
+            [InlineKeyboardButton("❓ Не думал об этом", callback_data="q4_a4")]
+        ]
+
+        await query.message.edit_media(
+            media=InputMediaPhoto(
+                media=open("images/Proof.jpg", "rb"),
+                caption=t("question_4", user.id),
+                parse_mode="HTML"
+            ),
+            reply_markup=InlineKeyboardMarkup(keyboard)
+        )
+
+    elif data.startswith("q4_"):
+
+        # 👉 удаляем сообщение с квизом
+        try:
+            await query.message.delete()
+        except:
+            pass
+
+        # 👉 отправляем сообщение "квиз пройден"
+        await query.message.reply_text(
+            t("finnaly_5_", user.id),
+            parse_mode="HTML"
+        )
+
+        # 👉 отправляем дашборд
+        msg = await send_dashboard2(query.message, user.id)
+
+        # 👉 сохраняем message_id
+        if msg and hasattr(msg, "message_id"):
+            set_last_message_id(user.id, msg.message_id)
 
 async def send_welcome(update, user_id):
-    # кнопка "Продолжить"
     keyboard = [
-        [t("continue_button", user_id)]
+        [InlineKeyboardButton(t("buttons_q", user_id)[0], callback_data="start_quiz")]
     ]
-    reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
 
-    # отправляем картинку + текст
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    # 👉 1. убираем клавиатуру
+    await update.message.reply_text(
+        text=t("setup_text", user_id),
+        reply_markup=ReplyKeyboardRemove()
+    )
     await update.message.reply_photo(
         photo=open("images/Prew.jpg", "rb"),
         caption=t("welcome_text", user_id),
-        parse_mode="HTML",  # ВОТ ЭТО КЛЮЧ 🔥
+        parse_mode="HTML",
         reply_markup=reply_markup
     )
 
@@ -331,9 +517,35 @@ async def send_dashboard(update, user_id):
 
     image = generate_balance_image(balance, pnl, user_id)
 
-    await update.message.reply_photo(
+    msg = await update.message.reply_photo(
         photo=image,
         caption=t("update_info", user_id),
         parse_mode="HTML",
         reply_markup=get_dashboard_keyboard(user_id)
     )
+
+    return msg  # 🔥 ВАЖНО
+
+
+async def send_dashboard2(message, user_id):
+
+    is_fully_logged = is_user_logged_in_fully(user_id)
+
+    if not is_fully_logged:
+        set_user_logged_in_fully(user_id)
+        
+    user = get_user_data(user_id)
+
+    balance = user.get("balance", 0.0)
+    pnl = user.get("P&L", 0.0)
+
+    image = generate_balance_image(balance, pnl, user_id)
+
+    msg = await message.reply_photo(
+        photo=image,
+        caption=t("update_info", user_id),
+        parse_mode="HTML",
+        reply_markup=get_dashboard_keyboard(user_id)
+    )
+
+    return msg

@@ -41,3 +41,19 @@ def login_user(user_id, username, language):
     }
 
     save_users(data)
+
+def set_last_message_id(user_id, message_id):
+    data = load_users()
+    user = data.get(str(user_id), {})
+
+    user["last_message_id"] = message_id
+
+    data[str(user_id)] = user
+    save_users(data)
+
+
+def get_last_message_id(user_id):
+    data = load_users()
+    user = data.get(str(user_id), {})
+
+    return user.get("last_message_id")

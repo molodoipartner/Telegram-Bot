@@ -3,11 +3,6 @@
         "ru": "Привет! Я бот 😄",
         "en": "Hello! I am a bot 😄"
     },
-    "setup_text": {
-        "ru": "⚙️ Подготовка и настройка бота",
-        
-        "en": "⚙️ Bot setup and preparation"
-    },
     "choose_language": {
         "ru": "🇺🇸 Please select your preferred language (EN)\n🇷🇺 Выберите удобный для вас язык (RU)",
         "en": "🇺🇸 Please select your preferred language (EN)\n🇷🇺 Выберите удобный для вас язык (RU)"
@@ -20,14 +15,10 @@
         "ru": "Ты не залогинен ❌",
         "en": "You are not logged in ❌"
     },
-    "welcome_text": {
-        "ru": "🚀 <b>Добро пожаловать в торгового бота (Trading Magnet)</b>\n\n📈 Инструмент для автоматической торговли\n\n📝 Пройди короткий опрос и начни зарабатывать уже <b>прямо сейчас!</b>",
+    "welcome_text": { 
+        "ru": "🚀 <b>Добро пожаловать в торгового бота</b>\n\nУникальный инструмент для работы с алгоритмической стратегией на рынке крипты 📊\n\n🔐 Безопасное хранение средств\n⚡ Быстрое пополнение и вывод\n📱 Простое и понятное управление\n\n📈 Бот автоматически исполняет сделки по стратегии\n\nБез лишних действий\nБез сложных настроек\n\n💰 Подключайся и используй возможности алгоритмической торговли\n\n🚀 Всё уже настроено — можно начинать",
         
-        "en": "🚀 <b>Welcome to the trading bot (Trading Magnet)</b>\n\n📈 A tool for automated trading\n\n📝 Take a short survey and start earning <b>right now!</b>"
-    },
-    "buttons_q": {
-        "ru": ["📝 Пройти квиз"],
-        "en": ["📝 Take the quiz"]
+        "en": "🚀 <b>Welcome to the trading bot</b>\n\nA unique tool for working with an algorithmic strategy on the cryptocurrency market 📊\n\n🔐 Secure fund storage\n⚡ Fast deposits and withdrawals\n📱 Simple and intuitive interface\n\n📈 The bot automatically executes trades based on the strategy\n\nNo complexity\nNo manual setup\n\n💰 Get started and leverage algorithmic trading\n\n🚀 Everything is ready — you can begin"
     },
     "continue_button": {
         "ru": "Продолжить ➡️",
@@ -58,8 +49,8 @@
         "en": "💼 My Balance"
     },
     "about_button": {
-        "ru": ["🌐 Сменить язык", "ℹ️ Мой бот"],
-        "en": ["🌐 Change Language", "ℹ️ My bot"]
+        "ru": ["🌐 Сменить язык", "ℹ️ О проекте"],
+        "en": ["🌐 Change Language", "ℹ️ About Project"]
     },
     "assets_overview": {
     "ru": "<b>Обзор активов</b>",
@@ -108,99 +99,5 @@
     "continue_button4": {
         "ru": "Начать зарабатывать! ➡️",
         "en": "Start Earning! ➡️"
-        },
-    "question_1": {
-        "ru": "💸 <b>Зачем вам сейчас дополнительный доход?</b>",
-        "en": "💸 <b>Why do you need additional income right now?</b>"
-    },
-    "answer_1_to_question_1": {
-        "ru": "Хочу закрыть финансовые вопросы",
-        "en": "I want to solve my financial needs"
-    },
-    "answer_2_to_question_1": {
-        "ru": "Хочу увеличить свой капитал",
-        "en": "I want to grow my capital"
-    },
-    "answer_3_to_question_1": {
-        "ru": "Хочу больше свободы и возможностей",
-        "en": "I want more freedom and opportunities"
-    },
-    "answer_4_to_question_1": {
-        "ru": "Просто ищу новые способы заработка",
-        "en": "I'm exploring new ways to earn"
-    },
-
-    "question_2": {
-        "ru": "🤖 <b>Какой формат заработка вам ближе?</b>",
-        "en": "🤖 <b>What type of earning suits you best?</b>"
-    },
-    "answer_1_to_question_2": {
-        "ru": "Пассивный доход без лишних действий",
-        "en": "Passive income with minimal effort"
-    },
-    "answer_2_to_question_2": {
-        "ru": "Автоматическая система с контролем",
-        "en": "Automated system with some control"
-    },
-    "answer_3_to_question_2": {
-        "ru": "Самостоятельная торговля",
-        "en": "Manual trading"
-    },
-    "answer_4_to_question_2": {
-        "ru": "Пока изучаю варианты",
-        "en": "Still exploring options"
-    },
-
-    "question_3": {
-        "ru": "🚀 <b>Какой результат вас действительно мотивирует?</b>",
-        "en": "🚀 <b>What kind of result motivates you the most?</b>"
-    },
-    "answer_1_to_question_3": {
-        "ru": "Стабильный рост баланса каждый месяц",
-        "en": "Stable monthly balance growth"
-    },
-    "answer_2_to_question_3": {
-        "ru": "Быстрый рост депозита",
-        "en": "Fast deposit growth"
-    },
-    "answer_3_to_question_3": {
-        "ru": "Дополнительный доход без усилий",
-        "en": "Extra income with minimal effort"
-    },
-    "answer_4_to_question_3": {
-        "ru": "Хочу сначала протестировать",
-        "en": "I want to test first"
-    },
-
-    "question_4": {
-        "ru": "📈 <b>Насколько вам важно видеть результат в реальном времени?</b>",
-        "en": "📈 <b>How important is it for you to see results in real time?</b>"
-    },
-    "answer_1_to_question_4": {
-        "ru": "Очень важно — хочу видеть рост баланса",
-        "en": "Very important — I want to see balance growth"
-    },
-    "answer_2_to_question_4": {
-        "ru": "Важно, но без лишней сложности",
-        "en": "Important, but without complexity"
-    },
-    "answer_3_to_question_4": {
-        "ru": "Не критично, главное результат",
-        "en": "Not critical, result matters more"
-    },
-    "answer_4_to_question_4": {
-        "ru": "Пока не задумывался об этом",
-        "en": "Haven’t really thought about it"
-    },
-    "finnaly_5_": {
-        "ru": "✅ <b>Квиз пройден!</b>\n\nНа основе твоих ответов мы подобрали и подключили тебя к наиболее подходящему торговому боту из доступных 📊\n\n⚡ Бот уже настроен и готов к работе\n\n💰 Пополни баланс, чтобы начать зарабатывать прямо сейчас 👇",
-        
-        "en": "✅ <b>Quiz completed!</b>\n\nBased on your answers, we have matched and connected you to the most suitable trading bot available 📊\n\n⚡ The bot is fully set up and ready to go\n\n💰 Top up your balance to start earning right now 👇"
-    },
-    "welcome_text_log": { 
-        "ru": "🚀 <b>Добро пожаловать в торгового бота</b>\n\nУникальный инструмент для работы с алгоритмической стратегией на рынке крипты 📊\n\n🔐 Безопасное хранение средств\n⚡ Быстрое пополнение и вывод\n📱 Простое и понятное управление\n\n📈 Бот автоматически исполняет сделки по стратегии\n\nБез лишних действий\nБез сложных настроек\n\n💰 Подключайся и используй возможности алгоритмической торговли\n\n🚀 Всё уже настроено — можно начинать",
-        
-        "en": "🚀 <b>Welcome to the trading bot</b>\n\nA unique tool for working with an algorithmic strategy on the cryptocurrency market 📊\n\n🔐 Secure fund storage\n⚡ Fast deposits and withdrawals\n📱 Simple and intuitive interface\n\n📈 The bot automatically executes trades based on the strategy\n\nNo complexity\nNo manual setup\n\n💰 Get started and leverage algorithmic trading\n\n🚀 Everything is ready — you can begin"
     }
-
 }

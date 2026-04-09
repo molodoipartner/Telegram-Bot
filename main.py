@@ -1,9 +1,11 @@
 import sys
 import threading
 
+from bot.handlers.admin_balance import admin_balance
+
 print("PYTHON PATH:", sys.executable)
 
-from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters
+from telegram.ext import ApplicationBuilder, CallbackQueryHandler, CommandHandler, MessageHandler, filters
 from bot.handlers.text import handle_text
 from bot.handlers.start import start
 from bot.handlers.wallet import wallet
@@ -12,7 +14,7 @@ from bot.handlers.withdraw import withdraw
 from bot.handlers.testdeposit import test_deposit
 from bot.handlers.payment import precheckout_callback, successful_payment
 from telegram.ext import PreCheckoutQueryHandler
-
+from bot.handlers.text import handle_callback
 from config import TOKEN
 
 from http_server import run_http  # 👈 добавили
@@ -29,8 +31,11 @@ def main():
     app.add_handler(CommandHandler("deposit", deposit))
     app.add_handler(CommandHandler("withdraw", withdraw))
     app.add_handler(CommandHandler("testdeposit", test_deposit))
+    app.add_handler(CommandHandler("admin_balance", admin_balance))
     app.add_handler(PreCheckoutQueryHandler(precheckout_callback))
     app.add_handler(MessageHandler(filters.SUCCESSFUL_PAYMENT, successful_payment))
+    app.add_handler(CallbackQueryHandler(handle_callback))
+
     print("✅ Бот запущен + HTTP сервер работает")
 
     app.run_polling()
