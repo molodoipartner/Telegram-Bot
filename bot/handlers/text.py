@@ -304,7 +304,7 @@ async def handle_callback(update, context):
         # 👉 3. отправляем новый экран (первый вопрос)
         await context.bot.send_photo(
             chat_id=user.id,
-            photo=open("images/Proof.jpg", "rb"),
+            photo=open("images/image.png", "rb"),
             caption=t("question_1", user.id),
             parse_mode="HTML",
             reply_markup=InlineKeyboardMarkup(keyboard)
@@ -321,7 +321,7 @@ async def handle_callback(update, context):
 
         await query.message.edit_media(
             media=InputMediaPhoto(
-                media=open("images/Proof.jpg", "rb"),
+                media=open("images/image.png", "rb"),
                 caption=t("question_2", user.id),
                 parse_mode="HTML"
             ),
@@ -339,7 +339,7 @@ async def handle_callback(update, context):
 
         await query.message.edit_media(
             media=InputMediaPhoto(
-                media=open("images/Proof.jpg", "rb"),
+                media=open("images/image.png", "rb"),
                 caption=t("question_3", user.id),
                 parse_mode="HTML"
             ),
@@ -357,7 +357,7 @@ async def handle_callback(update, context):
 
         await query.message.edit_media(
             media=InputMediaPhoto(
-                media=open("images/Proof.jpg", "rb"),
+                media=open("images/image.png", "rb"),
                 caption=t("question_4", user.id),
                 parse_mode="HTML"
             ),
