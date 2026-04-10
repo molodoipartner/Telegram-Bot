@@ -440,7 +440,7 @@ def get_dashboard_keyboard(user_id):
     keyboard = [
         [
             t("dashboard_buttons1", user_id)[0],
-            t("dashboard_buttons1", user_id)[1],
+            t("dashboard_buttons1", user_id)[2],
         ],
         [
             t("dashboard_buttons", user_id)[0],

@@ -3,20 +3,10 @@
         "username": "molodoipartner",
         "logged_in": true,
         "logged_in_fully": true,
-        "logged_in_at": "2026-04-10T12:23:17.649046",
+        "logged_in_at": "2026-04-10T15:00:42.595307",
         "language": "ru",
         "balance": 0.0,
         "P&L": 0.0,
-        "last_message_id": 1371
-    },
-    "6854914131": {
-        "username": "dadypartner",
-        "logged_in": true,
-        "logged_in_fully": true,
-        "logged_in_at": "2026-04-10T13:03:52.488743",
-        "language": "ru",
-        "balance": 0.0,
-        "P&L": 0.0,
-        "last_message_id": 1379
+        "last_message_id": 1449
     }
 }
