@@ -170,6 +170,35 @@ async def handle_text(update, context):
         msg = await send_Monthly_Profit(update, user.id)
         set_last_message_id(user.id, msg.message_id)
 
+    elif text in ["⚠️ Risks", "⚠️ Риски"]:
+
+        keyboard = [
+            [t("balance_button", user.id)]
+        ]
+
+        caption = t("risks_description", user.id)
+
+        last_message_id = get_last_message_id(user.id)
+
+        # 🟢 Удаляем старое сообщение
+        if last_message_id:
+            try:
+                await context.bot.delete_message(
+                    chat_id=update.effective_chat.id,
+                    message_id=last_message_id
+                )
+            except Exception as e:
+                print("Ошибка удаления:", e)
+
+        # 🔵 Отправляем новое
+        msg = await update.message.reply_photo(
+            photo=open("images/Risks.jpg", "rb"),
+            caption=caption,
+            parse_mode="HTML",
+            reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
+        )
+
+        set_last_message_id(user.id, msg.message_id)
 
     elif text in ["💳 Deposit", "💳 Пополнить"]:
 
@@ -674,19 +703,25 @@ def generate_monthly_profit_image(balance, user_id):
     legend_y = 580
     gap = 30
 
-    final_balance = balance * (1.05 ** 20)
+    # 📈 финальные значения через 5 месяцев (20 недель)
+    final_user = balance * (1.05 ** 20)
+    final_demo = base_compare * (1.05 ** 20)
+    final_high = high_compare * (1.05 ** 20)
 
+    # 📌 легенда (с прогнозом)
     draw.text((80, legend_y), 
         f"● {t('your_balance_label', user_id)} "
-        f"({int(balance)}$ → {int(final_balance)}$ {t('in_5_months', user_id)})",
+        f"({int(balance)}$ → {int(final_user)}$ {t('in_5_months', user_id)})",
         fill=(0, 200, 120), font=font_small)
 
     draw.text((80, legend_y + gap), 
-        f"● {t('start_deposit_label', user_id)} {int(base_compare)}$",
+        f"● {t('start_deposit_label', user_id)} "
+        f"({int(base_compare)}$ → {int(final_demo)}$ {t('in_5_months', user_id)})",
         fill=(120, 180, 255), font=font_small)
 
     draw.text((80, legend_y + gap*2), 
-        f"● {t('advanced_deposit_label', user_id)} {int(high_compare)}$",
+        f"● {t('advanced_deposit_label', user_id)} "
+        f"({int(high_compare)}$ → {int(final_high)}$ {t('in_5_months', user_id)})",
         fill=(255, 140, 40), font=font_small)
 
     # 💾 сохранить

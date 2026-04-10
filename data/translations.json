@@ -250,6 +250,11 @@
     "in_5_months": {
         "ru": "через 5 мес.",
         "en": "in 5 mo."
+    },
+    "risks_description": {
+        "ru": "⚠️ <b>Риски</b>\n\nКак и в любой торговле, при работе с ботом присутствуют риски 📉\n\nНа графике выше показан пример того, как цена может резко пойти против позиции\n\n🤖 Наш бот минимизирует такие ситуации:\n— алгоритм анализирует рынок и избегает входа в опасные моменты\n— при падении бот постепенно откупает актив, снижая среднюю цену входа\n— это помогает сгладить просадку и повысить шанс восстановления\n\n🛡 Однако важно понимать:\nникакая стратегия не даёт 100% гарантии\n\n📊 При этом, учитывая стабильную работу бота более 4 лет, вероятность подобного сценария крайне низкая — менее 3%\n\n🚨 Тем не менее, при резком обвале рынка бот, как и любой инструмент, может не успеть среагировать\n\n<b>💡 Дополнительно доступна страховка:</b>\nпри её подключении в случае сильного падения есть возможность вернуть часть или даже весь баланс\n\n📩 Подробнее можно узнать у менеджера: @dadypartner",
+        
+        "en": "⚠️ <b>Risks</b>\n\nAs with any trading activity, using the bot involves risks 📉\n\nThe chart above shows how the price can move sharply against a position\n\n🤖 Our bot is designed to minimize such situations:\n— the algorithm analyzes the market and avoids risky entries\n— during drops, the bot gradually buys more to lower the average entry price\n— this helps reduce drawdowns and improve recovery chances\n\n🛡 However, it is important to understand:\nno strategy guarantees 100% success\n\n📊 Based on over 4 years of stable performance, the probability of such a scenario is very low — less than 3%\n\n🚨 Still, in case of a sharp market crash, the bot may not react in time\n\n<b>💡 Insurance is also available:</b>\nwith it enabled, you may recover part or even the full balance in case of a major drop\n\n📩 For more details, contact the manager: @dadypartner"
     }
 
 }

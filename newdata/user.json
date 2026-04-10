@@ -4,10 +4,10 @@
         "logged_in": true,
         "logged_in_fully": true,
         "logged_in_at": "2026-04-09T15:40:17.915104",
-        "language": "ru",
+        "language": "en",
         "balance": 0.0,
         "P&L": 0.0,
-        "last_message_id": 2628
+        "last_message_id": 2657
     },
     "5532861453": {
         "username": null,
@@ -18,5 +18,15 @@
         "balance": 0.0,
         "P&L": 0.0,
         "last_message_id": 2616
+    },
+    "6854914131": {
+        "username": "dadypartner",
+        "logged_in": true,
+        "logged_in_fully": true,
+        "logged_in_at": "2026-04-09T22:59:50.561144",
+        "language": "ru",
+        "balance": 0.0,
+        "P&L": 0.0,
+        "last_message_id": 2677
     }
 }
