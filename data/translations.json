@@ -38,14 +38,14 @@
         "en": "Onboarding completed! 🎉"
     },
     "dashboard_text": {
-    "ru": "💰 <b>Баланс: 20.5$</b>\n\n📊 <b>Система:</b> Активна\n📈 <b>Сегодня:</b> +3.2%\n\n━━━━━━━━━━━━━━━\n\n⚡ Бот автоматически анализирует рынок и работает по проверенной стратегии на основе статистики.\n\n💡 Просто держи систему активной — остальное уже рассчитано.",
+    "ru": "💰 <b>Баланс: 20.5$</b>\n\n📊 <b>Система:</b> Активна\n📈 <b>Сегодня:</b> +3.2%\n\n━━━━━━━━━━━━━━━\n\n⚡ Бот автоматически анализирует рынок и работает по проверенной стратегии на основе статистики.\n\n💡 Просто держи систему активной - остальное уже рассчитано.",
     
-    "en": "💰 <b>Balance: $20.5</b>\n\n📊 <b>System:</b> Active\n📈 <b>Today:</b> +3.2%\n\n━━━━━━━━━━━━━━━\n\n⚡ The bot automatically analyzes the market and executes trades based on a proven statistical strategy.\n\n💡 Keep the system running — everything else is already calculated."
+    "en": "💰 <b>Balance: $20.5</b>\n\n📊 <b>System:</b> Active\n📈 <b>Today:</b> +3.2%\n\n━━━━━━━━━━━━━━━\n\n⚡ The bot automatically analyzes the market and executes trades based on a proven statistical strategy.\n\n💡 Keep the system running - everything else is already calculated."
     },
-    "dashboard_buttons1": {
-    "ru": ["🤑 Доход за месяц", "⚠️ Риски"],
-    "en": ["🤑 Monthly Profit", "⚠️ Risks"]
-    },
+"dashboard_buttons1": {
+    "ru": ["🤑 Доход за месяц", "💬 Отзывы", "⚠️ Риски"],
+    "en": ["🤑 Monthly Profit", "💬 Reviews", "⚠️ Risks"]
+},
     "Monthly_Profit": {
     "ru": ".......",
     "en": "......."
@@ -55,7 +55,7 @@
     "en": ["💳 Deposit", "💸 Withdraw"]
     },
     "top_up_text": {
-    "ru": "💼 <b>Пополнение баланса</b>\n\nВыбери удобный способ и отправь сумму для пополнения 💰\n\n━━━━━━━━━━━━━━━\n\n1️⃣ <b>USDT (TRC20)</b>\nСеть: TRON\nАдрес 👇\n<code>TC4gMQ5kjCwhfvb6dn3fAYctkoeZ3HfVJi</code>\n\n2️⃣ <b>USDT (BEP20)</b>\nСеть: Binance Smart Chain\nАдрес 👇\n<code>0x674E07e890a3F1B593B21e73107F2196a72d4e54</code>\n\n━━━━━━━━━━━━━━━\n\n💳 <b>Нет крипты?</b>\nКупить через <a href=\"https://www.moonpay.com/buy\">moonpay</a> USDT\n\n━━━━━━━━━━━━━━━\n\n⚡ После перевода отправь скриншот сюда:\n👉 <b>@dadypartner</b>\n\nЕсли возникнут вопросы — напиши в этот же чат 👆",
+    "ru": "💼 <b>Пополнение баланса</b>\n\nВыбери удобный способ и отправь сумму для пополнения 💰\n\n━━━━━━━━━━━━━━━\n\n1️⃣ <b>USDT (TRC20)</b>\nСеть: TRON\nАдрес 👇\n<code>TC4gMQ5kjCwhfvb6dn3fAYctkoeZ3HfVJi</code>\n\n2️⃣ <b>USDT (BEP20)</b>\nСеть: Binance Smart Chain\nАдрес 👇\n<code>0x674E07e890a3F1B593B21e73107F2196a72d4e54</code>\n\n━━━━━━━━━━━━━━━\n\n💳 <b>Нет крипты?</b>\nКупить через <a href=\"https://www.moonpay.com/buy\">moonpay</a> USDT\n\n━━━━━━━━━━━━━━━\n\n⚡ После перевода отправь скриншот сюда:\n👉 <b>@dadypartner</b>\n\nЕсли возникнут вопросы - напиши в этот же чат 👆",
     "en": "💼 <b>Deposit Funds</b>\n\nChoose your preferred method and send the amount to top up your balance 💰\n\n━━━━━━━━━━━━━━━\n\n1️⃣ <b>USDT (TRC20)</b>\nNetwork: TRON\nAddress 👇\n<code>TC4gMQ5kjCwhfvb6dn3fAYctkoeZ3HfVJi</code>\n\n2️⃣ <b>USDT (BEP20)</b>\nNetwork: Binance Smart Chain\nAddress 👇\n<code>0x674E07e890a3F1B593B21e73107F2196a72d4e54</code>\n\n━━━━━━━━━━━━━━━\n\n💳 <b>No crypto?</b>\nBuy USDT via <a href=\"https://www.moonpay.com/buy\">moonpay</a>\n\n━━━━━━━━━━━━━━━\n\n⚡ After sending, send a screenshot here:\n👉 <b>@dadypartner</b>\n\nIf you have any questions, just message in the same chat 👆"
     },  "withdraw_text": {
         "ru": "💸 <b>Вывод средств</b>\n\nЧтобы оформить вывод, отправь сообщение сюда:\n👉 <b>@dadypartner</b>\n\nУкажи:\n• сумму вывода 💰\n• адрес кошелька 📩\n\n━━━━━━━━━━━━━━━\n\n⏱ Заявки обрабатываются в кратчайшие сроки\n🔐 Все транзакции проходят проверку\n\n⚠️ В случае спама или некорректных запросов доступ к системе может быть ограничен",
@@ -88,7 +88,7 @@
         "en": "<b>Your Balance</b>"
     },
     "update_info": {
-        "ru": "🤖 <b>Бот уже подключён и работает с твоим балансом</b> 📊\n\n📈 <b>Средняя доходность:</b> ~20% в месяц\n\n🔄 <i>Обновление данных — каждые 24 часа</i>\n\n📌 Подробнее и обновления:\n👉 <b>t.me/bottestfx</b>\n👉 <b>https://t.me/+VcPc7f5YgDowZjQ8</b>\n\n❓ Есть вопросы?\nПиши сюда 👉 @dadypartner",
+        "ru": "🤖 <b>Бот уже подключён и работает с твоим балансом</b> 📊\n\n📈 <b>Средняя доходность:</b> ~20% в месяц\n\n🔄 <i>Обновление данных - каждые 24 часа</i>\n\n📌 Подробнее и обновления:\n👉 <b>t.me/bottestfx</b>\n👉 <b>https://t.me/+VcPc7f5YgDowZjQ8</b>\n\n❓ Есть вопросы?\nПиши сюда 👉 @dadypartner",
         
         "en": "🤖 <b>Your bot is already running with your balance</b> 📊\n\n📈 <b>Average return:</b> ~20% per month\n\n🔄 <i>Data updates every 24 hours</i>\n\n📌 More details and updates:\n👉 <b>t.me/bottestfx</b>\n👉 <b>https://t.me/+VcPc7f5YgDowZjQ8</b>\n\n❓ Any questions?\nText here 👉 @dadypartner"
     },
@@ -110,9 +110,9 @@
         "en": "Wow! ➡️"
     },
     "slide_3_text": {
-        "ru": "🚀 <b>Полная прозрачность и доступ к результатам</b>\n\nВсе результаты доступны к просмотру в этом канале:\n👉 <b>t.me/bottestfx</b>\n\nЗдесь публикуются:\n• входы и выходы\n• результаты сделок\n• актуальная активность бота\n\n🔍 Никаких скрытых данных — всё можно проверить самостоятельно",
+        "ru": "🚀 <b>Полная прозрачность и доступ к результатам</b>\n\nВсе результаты доступны к просмотру в этом канале:\n👉 <b>t.me/bottestfx</b>\n\nЗдесь публикуются:\n• входы и выходы\n• результаты сделок\n• актуальная активность бота\n\n🔍 Никаких скрытых данных - всё можно проверить самостоятельно",
         
-        "en": "🚀 <b>Full Transparency & Access to Results</b>\n\nAll results are available for review in this channel:\n👉 <b>t.me/bottestfx</b>\n\nHere you can find:\n• trade entries and exits\n• trade results\n• current bot activity\n\n🔍 No hidden data — everything can be independently verified"   },
+        "en": "🚀 <b>Full Transparency & Access to Results</b>\n\nAll results are available for review in this channel:\n👉 <b>t.me/bottestfx</b>\n\nHere you can find:\n• trade entries and exits\n• trade results\n• current bot activity\n\n🔍 No hidden data - everything can be independently verified"   },
     "continue_button4": {
         "ru": "Начать зарабатывать! ➡️",
         "en": "Start Earning! ➡️"
@@ -243,18 +243,18 @@
         "en": "mo"
     },
     "monthly_growth_description": {
-        "ru": "📊 <b>Прогноз роста твоего баланса</b>\n\nЭтот график показывает, как может расти твой депозит при работе бота 📈\n\n🟢 Зелёная линия — твой текущий баланс\n🔵 Синяя — пример при увеличении депозита\n🟠 Оранжевая — более высокий старт\n\n💡 Как видно, чем больше стартовый баланс — тем сильнее итоговый рост\n\n🚀 Увеличивая депозит, ты ускоряешь накопление прибыли и выходишь на новый уровень дохода",
+        "ru": "📊 <b>Прогноз роста твоего баланса</b>\n\nЭтот график показывает, как может расти твой депозит при работе бота 📈\n\n🟢 Зелёная линия - твой текущий баланс\n🔵 Синяя - пример при увеличении депозита\n🟠 Оранжевая - более высокий старт\n\n💡 Как видно, чем больше стартовый баланс - тем сильнее итоговый рост\n\n🚀 Увеличивая депозит, ты ускоряешь накопление прибыли и выходишь на новый уровень дохода",
         
-        "en": "📊 <b>Balance Growth Projection</b>\n\nThis chart shows how your deposit can grow while the bot is running 📈\n\n🟢 Green line — your current balance\n🔵 Blue line — example with a higher deposit\n🟠 Orange line — advanced starting amount\n\n💡 As you can see, a higher starting balance leads to significantly greater results\n\n🚀 By increasing your deposit, you accelerate profit growth and reach a new income level"
+        "en": "📊 <b>Balance Growth Projection</b>\n\nThis chart shows how your deposit can grow while the bot is running 📈\n\n🟢 Green line - your current balance\n🔵 Blue line - example with a higher deposit\n🟠 Orange line - advanced starting amount\n\n💡 As you can see, a higher starting balance leads to significantly greater results\n\n🚀 By increasing your deposit, you accelerate profit growth and reach a new income level"
     },
     "in_5_months": {
         "ru": "через 5 мес.",
         "en": "in 5 mo."
     },
     "risks_description": {
-        "ru": "⚠️ <b>Риски</b>\n\nКак и в любой торговле, при работе с ботом присутствуют риски 📉\n\nНа графике выше показан пример того, как цена может резко пойти против позиции\n\n🤖 Наш бот минимизирует такие ситуации:\n— алгоритм анализирует рынок и избегает входа в опасные моменты\n— при падении бот постепенно откупает актив, снижая среднюю цену входа\n— это помогает сгладить просадку и повысить шанс восстановления\n\n🛡 Однако важно понимать:\nникакая стратегия не даёт 100% гарантии\n\n📊 При этом, учитывая стабильную работу бота более 4 лет, вероятность подобного сценария крайне низкая — менее 1%\n\n🚨 Тем не менее, при резком обвале рынка бот, как и любой инструмент, может не успеть среагировать\n\n<b>💡 Дополнительно доступна страховка:</b>\nпри её подключении в случае сильного падения есть возможность вернуть часть или даже весь баланс\n\n📩 Подробнее можно узнать у менеджера: @dadypartner",
+        "ru": "⚠️ <b>Риски</b>\n\nКак и в любой торговле, при работе с ботом присутствуют риски 📉\n\nНа графике выше показан пример того, как цена может резко пойти против позиции\n\n🤖 Наш бот минимизирует такие ситуации:\n- алгоритм анализирует рынок и избегает входа в опасные моменты\n- при падении бот постепенно откупает актив, снижая среднюю цену входа\n- это помогает сгладить просадку и повысить шанс восстановления\n\n🛡 Однако важно понимать:\nникакая стратегия не даёт 100% гарантии\n\n📊 При этом, учитывая стабильную работу бота более 4 лет, вероятность подобного сценария крайне низкая - менее 1%\n\n🚨 Тем не менее, при резком обвале рынка бот, как и любой инструмент, может не успеть среагировать\n\n<b>💡 Дополнительно доступна страховка:</b>\nпри её подключении в случае сильного падения есть возможность вернуть часть или даже весь баланс\n\n📩 Подробнее можно узнать у менеджера: @dadypartner",
         
-        "en": "⚠️ <b>Risks</b>\n\nAs with any trading activity, using the bot involves risks 📉\n\nThe chart above shows how the price can move sharply against a position\n\n🤖 Our bot is designed to minimize such situations:\n— the algorithm analyzes the market and avoids risky entries\n— during drops, the bot gradually buys more to lower the average entry price\n— this helps reduce drawdowns and improve recovery chances\n\n🛡 However, it is important to understand:\nno strategy guarantees 100% success\n\n📊 Based on over 4 years of stable performance, the probability of such a scenario is very low — less than 1%\n\n🚨 Still, in case of a sharp market crash, the bot may not react in time\n\n<b>💡 Insurance is also available:</b>\nwith it enabled, you may recover part or even the full balance in case of a major drop\n\n📩 For more details, contact the manager: @dadypartner"
+        "en": "⚠️ <b>Risks</b>\n\nAs with any trading activity, using the bot involves risks 📉\n\nThe chart above shows how the price can move sharply against a position\n\n🤖 Our bot is designed to minimize such situations:\n- the algorithm analyzes the market and avoids risky entries\n- during drops, the bot gradually buys more to lower the average entry price\n- this helps reduce drawdowns and improve recovery chances\n\n🛡 However, it is important to understand:\nno strategy guarantees 100% success\n\n📊 Based on over 4 years of stable performance, the probability of such a scenario is very low - less than 1%\n\n🚨 Still, in case of a sharp market crash, the bot may not react in time\n\n<b>💡 Insurance is also available:</b>\nwith it enabled, you may recover part or even the full balance in case of a major drop\n\n📩 For more details, contact the manager: @dadypartner"
     }
 
 }
