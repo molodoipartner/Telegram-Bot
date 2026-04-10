@@ -1,32 +1,22 @@
 {
-    "1459737590": {
-        "username": "molodoipartner",
-        "logged_in": true,
-        "logged_in_fully": true,
-        "logged_in_at": "2026-04-09T15:40:17.915104",
-        "language": "en",
-        "balance": 0.0,
-        "P&L": 0.0,
-        "last_message_id": 2657
-    },
-    "5532861453": {
-        "username": null,
-        "logged_in": true,
-        "logged_in_fully": true,
-        "logged_in_at": "2026-04-09T16:02:18.500469",
-        "language": "en",
-        "balance": 0.0,
-        "P&L": 0.0,
-        "last_message_id": 2616
-    },
     "6854914131": {
         "username": "dadypartner",
         "logged_in": true,
         "logged_in_fully": true,
-        "logged_in_at": "2026-04-09T22:59:50.561144",
+        "logged_in_at": "2026-04-10T09:10:30.686958",
+        "language": "en",
+        "balance": 0.0,
+        "P&L": 0.0,
+        "last_message_id": 2689
+    },
+    "1459737590": {
+        "username": "molodoipartner",
+        "logged_in": true,
+        "logged_in_fully": true,
+        "logged_in_at": "2026-04-10T09:18:21.082654",
         "language": "ru",
         "balance": 0.0,
         "P&L": 0.0,
-        "last_message_id": 2677
+        "last_message_id": 2697
     }
 }

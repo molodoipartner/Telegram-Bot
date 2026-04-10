@@ -1,3 +1,5 @@
+import asyncio
+
 from bot.services.user_service import get_last_message_id, login_user, get_user, set_language, set_last_message_id
 from bot.utils.file_db import load_users, save_users
 from bot.utils.i18n import t, get_image
@@ -406,6 +408,8 @@ async def handle_callback(update, context):
             t("finnaly_5_", user.id),
             parse_mode="HTML"
         )
+        # ⏳ задержка 2 секунды
+        await asyncio.sleep(2)
 
         msg = await send_dashboard2(query.message, user.id)
 
