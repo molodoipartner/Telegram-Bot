@@ -186,8 +186,8 @@
 
 
     "question_4": {
-        "ru": "💸 <b>Какую сумму ты бы рассматривал(а) для старта?</b>",
-        "en": "💸 <b>What amount would you consider for starting?</b>"
+        "ru": "💸 <b>Если бы у тебя была возможность использовать прибыльный торговый бот, какую сумму ты бы рассматривал(а) для старта?</b>",
+        "en": "💸 <b>If you had the opportunity to use a profitable trading bot, what amount would you consider for starting?</b>"
     },
     "answer_1_to_question_4": {
         "ru": "💵 До 100$",
