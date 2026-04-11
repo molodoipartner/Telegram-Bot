@@ -311,9 +311,8 @@ async def handle_text(update, context):
             reply_markup=reply_markup
         )
 
-def save_user_answer(user_id, question, answer):
+def save_user_answer(user_id, question_key, question_text, answer_text):
     users = load_users()
-
     user_id = str(user_id)
 
     if user_id not in users:
@@ -322,9 +321,14 @@ def save_user_answer(user_id, question, answer):
     if "answers" not in users[user_id]:
         users[user_id]["answers"] = {}
 
-    users[user_id]["answers"][question] = answer
+    # убираем HTML
+    question_text = question_text.replace("<b>", "").replace("</b>", "")
+    answer_text = answer_text.replace("<b>", "").replace("</b>", "")
+
+    users[user_id]["answers"][question_key] = f"{question_text} - {answer_text}"
 
     save_users(users)
+
 
 async def handle_callback(update, context):
     query = update.callback_query
@@ -358,7 +362,15 @@ async def handle_callback(update, context):
 
     # 👉 Q1 → Q2
     elif data.startswith("q1_"):
-        save_user_answer(user.id, "q1", data)
+        answer_key = data.split("_")[1].replace("a", "")  # 1 ✅
+
+        save_user_answer(
+            user.id,
+            "q1",
+            t("question_1", user.id),
+            t(f"answer_{answer_key}_to_question_1", user.id)
+        )
+
         keyboard = [
             [InlineKeyboardButton(t("answer_1_to_question_2", user.id), callback_data="q2_a1")],
             [InlineKeyboardButton(t("answer_2_to_question_2", user.id), callback_data="q2_a2")],
@@ -377,7 +389,15 @@ async def handle_callback(update, context):
 
     # 👉 Q2 → Q3
     elif data.startswith("q2_"):
-        save_user_answer(user.id, "q2", data)
+        answer_key = data.split("_")[1].replace("a", "")  # 1 ✅
+
+        save_user_answer(
+            user.id,
+            "q2",
+            t("question_2", user.id),
+            t(f"answer_{answer_key}_to_question_2", user.id)
+        )
+
         keyboard = [
             [InlineKeyboardButton(t("answer_1_to_question_3", user.id), callback_data="q3_a1")],
             [InlineKeyboardButton(t("answer_2_to_question_3", user.id), callback_data="q3_a2")],
@@ -396,7 +416,15 @@ async def handle_callback(update, context):
 
     # 👉 Q3 → Q4
     elif data.startswith("q3_"):
-        save_user_answer(user.id, "q3", data)
+        answer_key = data.split("_")[1].replace("a", "")  # 1 ✅
+
+        save_user_answer(
+            user.id,
+            "q3",
+            t("question_3", user.id),
+            t(f"answer_{answer_key}_to_question_3", user.id)
+        )
+
         keyboard = [
             [InlineKeyboardButton(t("answer_1_to_question_4", user.id), callback_data="q4_a1")],
             [InlineKeyboardButton(t("answer_2_to_question_4", user.id), callback_data="q4_a2")],
@@ -413,9 +441,17 @@ async def handle_callback(update, context):
             reply_markup=InlineKeyboardMarkup(keyboard)
         )
 
-        # 👉 Q4 → Q5
+    # 👉 Q4 → Q5
     elif data.startswith("q4_"):
-        save_user_answer(user.id, "q4", data)
+        answer_key = data.split("_")[1].replace("a", "")  # 1 ✅
+
+        save_user_answer(
+            user.id,
+            "q4",
+            t("question_4", user.id),
+            t(f"answer_{answer_key}_to_question_4", user.id)
+        )
+
         keyboard = [
             [InlineKeyboardButton(t("answer_1_to_question_5", user.id), callback_data="q5_a1")],
             [InlineKeyboardButton(t("answer_2_to_question_5", user.id), callback_data="q5_a2")]
@@ -430,10 +466,17 @@ async def handle_callback(update, context):
             reply_markup=InlineKeyboardMarkup(keyboard)
         )
 
-
     # 👉 FINISH
     elif data.startswith("q5_"):
-        save_user_answer(user.id, "q5", data)
+        answer_key = data.split("_")[1].replace("a", "")  # 1 ✅
+
+        save_user_answer(
+            user.id,
+            "q5",
+            t("question_5", user.id),
+            t(f"answer_{answer_key}_to_question_5", user.id)
+        )
+
         try:
             await query.message.delete()
         except:
@@ -443,15 +486,13 @@ async def handle_callback(update, context):
             t("finnaly_5_", user.id),
             parse_mode="HTML"
         )
-        # ⏳ задержка 2 секунды
+
         await asyncio.sleep(2)
 
         msg = await send_dashboard2(query.message, user.id)
 
         if msg and hasattr(msg, "message_id"):
             set_last_message_id(user.id, msg.message_id)
-
-
 
 async def send_welcome(update, user_id):
     keyboard = [
