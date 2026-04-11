@@ -311,6 +311,20 @@ async def handle_text(update, context):
             reply_markup=reply_markup
         )
 
+def save_user_answer(user_id, question, answer):
+    users = load_users()
+
+    user_id = str(user_id)
+
+    if user_id not in users:
+        return
+
+    if "answers" not in users[user_id]:
+        users[user_id]["answers"] = {}
+
+    users[user_id]["answers"][question] = answer
+
+    save_users(users)
 
 async def handle_callback(update, context):
     query = update.callback_query
@@ -326,8 +340,7 @@ async def handle_callback(update, context):
         keyboard = [
             [InlineKeyboardButton(t("answer_1_to_question_1", user.id), callback_data="q1_a1")],
             [InlineKeyboardButton(t("answer_2_to_question_1", user.id), callback_data="q1_a2")],
-            [InlineKeyboardButton(t("answer_3_to_question_1", user.id), callback_data="q1_a3")],
-            [InlineKeyboardButton(t("answer_4_to_question_1", user.id), callback_data="q1_a4")]
+            [InlineKeyboardButton(t("answer_3_to_question_1", user.id), callback_data="q1_a3")]
         ]
 
         try:
@@ -337,7 +350,7 @@ async def handle_callback(update, context):
 
         await context.bot.send_photo(
             chat_id=user.id,
-            photo=open("images/image.png", "rb"),
+            photo=open("images/quizz/1.jpeg", "rb"),
             caption=t("question_1", user.id),
             parse_mode="HTML",
             reply_markup=InlineKeyboardMarkup(keyboard)
@@ -345,6 +358,7 @@ async def handle_callback(update, context):
 
     # 👉 Q1 → Q2
     elif data.startswith("q1_"):
+        save_user_answer(user.id, "q1", data)
         keyboard = [
             [InlineKeyboardButton(t("answer_1_to_question_2", user.id), callback_data="q2_a1")],
             [InlineKeyboardButton(t("answer_2_to_question_2", user.id), callback_data="q2_a2")],
@@ -354,7 +368,7 @@ async def handle_callback(update, context):
 
         await query.message.edit_media(
             media=InputMediaPhoto(
-                media=open("images/image.png", "rb"),
+                media=open("images/quizz/2.jpeg", "rb"),
                 caption=t("question_2", user.id),
                 parse_mode="HTML"
             ),
@@ -363,6 +377,7 @@ async def handle_callback(update, context):
 
     # 👉 Q2 → Q3
     elif data.startswith("q2_"):
+        save_user_answer(user.id, "q2", data)
         keyboard = [
             [InlineKeyboardButton(t("answer_1_to_question_3", user.id), callback_data="q3_a1")],
             [InlineKeyboardButton(t("answer_2_to_question_3", user.id), callback_data="q3_a2")],
@@ -372,7 +387,7 @@ async def handle_callback(update, context):
 
         await query.message.edit_media(
             media=InputMediaPhoto(
-                media=open("images/image.png", "rb"),
+                media=open("images/quizz/3.jpeg", "rb"),
                 caption=t("question_3", user.id),
                 parse_mode="HTML"
             ),
@@ -381,6 +396,7 @@ async def handle_callback(update, context):
 
     # 👉 Q3 → Q4
     elif data.startswith("q3_"):
+        save_user_answer(user.id, "q3", data)
         keyboard = [
             [InlineKeyboardButton(t("answer_1_to_question_4", user.id), callback_data="q4_a1")],
             [InlineKeyboardButton(t("answer_2_to_question_4", user.id), callback_data="q4_a2")],
@@ -390,15 +406,34 @@ async def handle_callback(update, context):
 
         await query.message.edit_media(
             media=InputMediaPhoto(
-                media=open("images/image.png", "rb"),
+                media=open("images/quizz/4.jpeg", "rb"),
                 caption=t("question_4", user.id),
                 parse_mode="HTML"
             ),
             reply_markup=InlineKeyboardMarkup(keyboard)
         )
 
-    # 👉 FINISH
+        # 👉 Q4 → Q5
     elif data.startswith("q4_"):
+        save_user_answer(user.id, "q4", data)
+        keyboard = [
+            [InlineKeyboardButton(t("answer_1_to_question_5", user.id), callback_data="q5_a1")],
+            [InlineKeyboardButton(t("answer_2_to_question_5", user.id), callback_data="q5_a2")]
+        ]
+
+        await query.message.edit_media(
+            media=InputMediaPhoto(
+                media=open("images/quizz/5.jpeg", "rb"),
+                caption=t("question_5", user.id),
+                parse_mode="HTML"
+            ),
+            reply_markup=InlineKeyboardMarkup(keyboard)
+        )
+
+
+    # 👉 FINISH
+    elif data.startswith("q5_"):
+        save_user_answer(user.id, "q5", data)
         try:
             await query.message.delete()
         except:

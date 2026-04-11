@@ -117,89 +117,112 @@
         "ru": "Начать зарабатывать! ➡️",
         "en": "Start Earning! ➡️"
         },
+
+
+
     "question_1": {
-        "ru": "💸 <b>Зачем вам сейчас дополнительный доход?</b>",
-        "en": "💸 <b>Why are you looking for extra income right now?</b>"
+        "ru": "📊 <b>Как ты сейчас оцениваешь своё финансовое положение?</b>",
+        "en": "📊 <b>How do you currently assess your financial situation?</b>"
     },
     "answer_1_to_question_1": {
-        "ru": "💸 Закрыть финансовые вопросы",
-        "en": "💸 Cover my financial needs"
+        "ru": "👍 В целом стабильно, но без накоплений",
+        "en": "👍 Stable, but no savings"
     },
     "answer_2_to_question_1": {
-        "ru": "📈 Увеличить капитал",
-        "en": "📈 Grow my capital"
+        "ru": "💰 Есть накопления, но хочется больше",
+        "en": "💰 I have savings, but want more"
     },
     "answer_3_to_question_1": {
-        "ru": "🌴 Больше свободы и возможностей",
-        "en": "🌴 Gain more freedom and opportunities"
+        "ru": "🚀 Уже инвестирую и ищу новые возможности",
+        "en": "🚀 Already investing and looking for new opportunities"
     },
-    "answer_4_to_question_1": {
-        "ru": "🔍 Изучаю новые способы заработка",
-        "en": "🔍 Exploring new income opportunities"
-    },
+
+
 
     "question_2": {
-        "ru": "🤖 <b>Какой формат заработка вам ближе?</b>",
-        "en": "🤖 <b>What type of earning suits you best?</b>"
+        "ru": "📊 <b>Был ли у тебя опыт в криптовалюте или в трейдинге?</b>",
+        "en": "📊 <b>Do you have experience with crypto or trading?</b>"
     },
     "answer_1_to_question_2": {
-        "ru": "🤖 Пассивный доход",
-        "en": "🤖 Passive income"
+        "ru": "❌ Нет, не пробовал(а)",
+        "en": "❌ No, never tried"
     },
     "answer_2_to_question_2": {
-        "ru": "⚙️ Автоматизация с контролем",
-        "en": "⚙️ Automated system with control"
+        "ru": "👀 Немного изучал(а)",
+        "en": "👀 Learned a bit"
     },
     "answer_3_to_question_2": {
-        "ru": "📊 Самостоятельная торговля",
-        "en": "📊 Manual trading"
+        "ru": "📈 Есть опыт",
+        "en": "📈 I have experience"
     },
     "answer_4_to_question_2": {
-        "ru": "🔍 Пока изучаю",
-        "en": "🔍 Still exploring"
+        "ru": "🚀 Активно торгую",
+        "en": "🚀 Actively trading"
     },
+
+
 
     "question_3": {
-        "ru": "🚀 <b>Какой результат вас больше всего мотивирует?</b>",
-        "en": "🚀 <b>What result motivates you the most?</b>"
+        "ru": "🤖 <b>Слышал(а) ли ты о торговых ботах, которые могут работать за тебя?</b>",
+        "en": "🤖 <b>Have you heard about trading bots that can work for you?</b>"
     },
     "answer_1_to_question_3": {
-        "ru": "📈 Стабильный рост каждый месяц",
-        "en": "📈 Stable monthly growth"
+        "ru": "❌ Нет, впервые слышу",
+        "en": "❌ No, first time hearing about it"
     },
     "answer_2_to_question_3": {
-        "ru": "🚀 Быстрый рост депозита",
-        "en": "🚀 Fast capital growth"
+        "ru": "👀 Что-то слышал(а), но не разбирался(ась)",
+        "en": "👀 Heard something, but didn’t explore"
     },
     "answer_3_to_question_3": {
-        "ru": "💰 Пассивный доход",
-        "en": "💰 Passive income"
+        "ru": "⚙️ Да, понимаю как это работает",
+        "en": "⚙️ Yes, I understand how it works"
     },
     "answer_4_to_question_3": {
-        "ru": "🧪 Хочу протестировать",
-        "en": "🧪 I want to test it first"
+        "ru": "🚀 Уже пробовал(а) использовать",
+        "en": "🚀 Already tried using them"
     },
 
+
+
     "question_4": {
-        "ru": "📈 <b>Насколько важно видеть результат в реальном времени?</b>",
-        "en": "📈 <b>How important is it to track results in real time?</b>"
+        "ru": "💸 <b>Какую сумму ты бы рассматривал(а) для старта?</b>",
+        "en": "💸 <b>What amount would you consider for starting?</b>"
     },
     "answer_1_to_question_4": {
-        "ru": "📈 Очень важно",
-        "en": "📈 Very important"
+        "ru": "💵 До 100$",
+        "en": "💵 Up to $100"
     },
     "answer_2_to_question_4": {
-        "ru": "👍 Важно",
-        "en": "👍 Important"
+        "ru": "💰 100$ - 500$",
+        "en": "💰 $100 - $500"
     },
     "answer_3_to_question_4": {
-        "ru": "🤷 Не критично",
-        "en": "🤷 Not critical"
+        "ru": "💎 500$ - 1000$",
+        "en": "💎 $500 - $1000"
     },
     "answer_4_to_question_4": {
-        "ru": "❓ Не задумывался",
-        "en": "❓ Haven’t thought about it"
+        "ru": "🏦 1000$+",
+        "en": "🏦 $1000+"
     },
+
+
+
+    "question_5": {
+        "ru": "⏳ <b>Ты бы скорее рассматривал(а) это как краткосрочный заработок или как долгосрочную инвестицию?</b>",
+        "en": "⏳ <b>Would you consider this more as short-term income or a long-term investment?</b>"
+    },
+    "answer_1_to_question_5": {
+        "ru": "⚡ Скорее краткосрочный заработок",
+        "en": "⚡ More like short-term income"
+    },
+    "answer_2_to_question_5": {
+        "ru": "📈 Скорее долгосрочная инвестиция",
+        "en": "📈 More like a long-term investment"
+    },
+
+
+
     "finnaly_5_": {
         "ru": "✅ <b>Квиз пройден!</b>\n\nНа основе твоих ответов мы подобрали и подключили тебя к наиболее подходящему торговому боту из доступных 📊\n\n⚡ Бот уже настроен и готов к работе\n\n💰 Пополни баланс, чтобы начать зарабатывать прямо сейчас 👇",
         

@@ -3,10 +3,17 @@
         "username": "molodoipartner",
         "logged_in": true,
         "logged_in_fully": true,
-        "logged_in_at": "2026-04-10T15:00:42.595307",
+        "logged_in_at": "2026-04-11T12:59:08.055485",
         "language": "ru",
         "balance": 0.0,
         "P&L": 0.0,
-        "last_message_id": 1449
+        "answers": {
+            "q1": "q1_a1",
+            "q2": "q2_a2",
+            "q3": "q3_a1",
+            "q4": "q4_a4",
+            "q5": "q5_a1"
+        },
+        "last_message_id": 1582
     }
 }

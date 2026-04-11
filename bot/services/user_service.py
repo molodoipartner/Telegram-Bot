@@ -37,7 +37,8 @@ def login_user(user_id, username, language):
         "logged_in_at": datetime.now().isoformat(),
         "language": language,
         "balance": 0.00,
-        "P&L": 0.00
+        "P&L": 0.00,
+        "answers": {},
     }
 
     save_users(data)
