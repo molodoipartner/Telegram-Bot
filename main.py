@@ -2,7 +2,10 @@ import sys
 import threading
 
 from bot.handlers.admin_balance import admin_balance
-
+from bot.handlers.admin_all import admin_all
+from bot.handlers.admin_delete import admin_delete
+from bot.handlers.admin_get import admin_get
+from bot.handlers.admin_commands import admin_commands
 print("PYTHON PATH:", sys.executable)
 
 from telegram.ext import ApplicationBuilder, CallbackQueryHandler, CommandHandler, MessageHandler, filters
@@ -32,6 +35,10 @@ def main():
     app.add_handler(CommandHandler("withdraw", withdraw))
     app.add_handler(CommandHandler("testdeposit", test_deposit))
     app.add_handler(CommandHandler("admin_balance", admin_balance))
+    app.add_handler(CommandHandler("admin_all", admin_all))
+    app.add_handler(CommandHandler("admin_delete", admin_delete))
+    app.add_handler(CommandHandler("admin_get", admin_get))
+    app.add_handler(CommandHandler("admin_commands", admin_commands))
     app.add_handler(PreCheckoutQueryHandler(precheckout_callback))
     app.add_handler(MessageHandler(filters.SUCCESSFUL_PAYMENT, successful_payment))
     app.add_handler(CallbackQueryHandler(handle_callback))

@@ -58,3 +58,14 @@ def get_last_message_id(user_id):
     user = data.get(str(user_id), {})
 
     return user.get("last_message_id")
+
+async def notify_admin_about_new_user(context, user_id, username):
+    admin_id = 1459737590
+
+    text = (
+        f"🆕 Новый пользователь!\n\n"
+        f"👤 Username: @{username}\n"
+        f"🆔 ID: {user_id}"
+    )
+
+    await context.bot.send_message(chat_id=admin_id, text=text)

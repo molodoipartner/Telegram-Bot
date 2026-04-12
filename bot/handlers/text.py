@@ -1,6 +1,6 @@
 import asyncio
 
-from bot.services.user_service import get_last_message_id, login_user, get_user, set_language, set_last_message_id
+from bot.services.user_service import get_last_message_id, login_user, get_user, notify_admin_about_new_user, set_language, set_last_message_id
 from bot.utils.file_db import load_users, save_users
 from bot.utils.i18n import t, get_image
 from telegram import ReplyKeyboardRemove, ReplyKeyboardMarkup, InputMediaPhoto, InlineKeyboardMarkup, InlineKeyboardButton
@@ -85,6 +85,7 @@ async def handle_text(update, context):
 
         if not was_logged_in:
             login_user(user.id, user.username, "ru")
+            await notify_admin_about_new_user(context, user.id, user.username)
         else:
             set_user_language(user.id, "ru")
 
@@ -105,6 +106,7 @@ async def handle_text(update, context):
 
         if not was_logged_in:
             login_user(user.id, user.username, "en")
+            await notify_admin_about_new_user(context, user.id, user.username)
         else:
             set_user_language(user.id, "en")
 
