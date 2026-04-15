@@ -39,10 +39,30 @@ async def admin_commands(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "<code>/admin_delete username</code>\n"
         "<code>/admin_delete id</code>\n\n"
 
+        "📨 <b>/admin_send</b>\n"
+        "Отправить сообщение конкретному пользователю\n"
+        "Использование:\n"
+        "<code>/admin_send username \"текст\"</code>\n"
+        "<code>/admin_send id \"текст\" \"Кнопка|url\"</code>\n"
+        "Поддержка:\n"
+        "• *жирный текст*\n"
+        "• переносы строк\n"
+        "• несколько кнопок\n\n"
+
+        "🌍 <b>/admin_send_all</b>\n"
+        "Сделать рассылку всем пользователям\n"
+        "Использование:\n"
+        "<code>/admin_send_all \"текст\"</code>\n"
+        "<code>/admin_send_all \"текст\" \"Кнопка|url\" \"Кнопка2|url\"</code>\n"
+        "Поддержка:\n"
+        "• *жирный текст*\n"
+        "• переносы строк\n"
+        "• до нескольких кнопок\n\n"
+
         "📢 <b>Скоро можно добавить:</b>\n"
         "• бан пользователя\n"
-        "• рассылка\n"
+        "• фильтр рассылки\n"
         "• статистика\n"
+        "• отложенные сообщения\n"
     )
-
     await update.message.reply_text(text, parse_mode="HTML")

@@ -6,6 +6,7 @@ from bot.handlers.admin_all import admin_all
 from bot.handlers.admin_delete import admin_delete
 from bot.handlers.admin_get import admin_get
 from bot.handlers.admin_commands import admin_commands
+from bot.handlers.admin_send import admin_send, admin_send_all
 print("PYTHON PATH:", sys.executable)
 
 from telegram.ext import ApplicationBuilder, CallbackQueryHandler, CommandHandler, MessageHandler, filters
@@ -39,6 +40,8 @@ def main():
     app.add_handler(CommandHandler("admin_delete", admin_delete))
     app.add_handler(CommandHandler("admin_get", admin_get))
     app.add_handler(CommandHandler("admin_commands", admin_commands))
+    app.add_handler(CommandHandler("admin_send", admin_send))
+    app.add_handler(CommandHandler("admin_send_all", admin_send_all))
     app.add_handler(PreCheckoutQueryHandler(precheckout_callback))
     app.add_handler(MessageHandler(filters.SUCCESSFUL_PAYMENT, successful_payment))
     app.add_handler(CallbackQueryHandler(handle_callback))
